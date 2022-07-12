@@ -12,4 +12,6 @@ I am currently a first-year PhD student at [University of St Andrews](https://ww
 
 ## Research interests
 
-TBC
+I am currently interested in collaboratively training deep learning models in context of edge computing and cloud computing. 
+Current collaborative machine learning (CML) techniques, e.g. federated learning and split learning, suffer from low resource utilisation during training.
+During my PhD study, I am dedicated to build an efficient CML framework that accelerates CML in edge/cloud computing by exploring parallelisation techniques.
