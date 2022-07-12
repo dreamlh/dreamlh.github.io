@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+[Download](https://github.com/dreamlh/zihanzhang.github.io/blob/master/files/CV_2022.pdf)
+
 Education
 ======
 * BSc in Mathematics, Shandong University (China), 2013-2017
