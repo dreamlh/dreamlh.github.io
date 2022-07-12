@@ -11,49 +11,24 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* BSc in Mathematics, Shandong University (China), 2013-2017
+* MSc in Data Science (Distinction), University of Edinburgh (UK), 2017-2018
+* PhD in Computer Science, Queen's University Belfast (UK), 2021-2022 
+* PhD in Computer Science, University of St Andrews (UK), 2022-present
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2018-2021: Algorithm Engineer
+  * Noah's Ark Lab @ Huawei Technology
+  * Responsible for optimizing Huawei's logistics by tackling vehicle routing problems and bin packing problems with exact algorithms (mixed-integer programming, tree search, etc.) and heuristics (machine learning, simulated annealing, etc.), and visualising the 3D packing results.
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
-Publications
-======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* Language
+  * Chinese: native proficiency
+  * English: professional working proficiency
+* Programming
+  * Advanced: Python, Java, Scala, Spark, Linux, Docker, Hadoop
+  * Good: SQL, R, C/C++, SAS
+* Management
+  * Git, Overleaf, Microsoft Office
