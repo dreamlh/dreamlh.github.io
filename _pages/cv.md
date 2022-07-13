@@ -15,8 +15,7 @@ Education
 ======
 * BSc in Mathematics, Shandong University (China), 2013-2017
 * MSc in Data Science (Distinction), University of Edinburgh (UK), 2017-2018
-* PhD in Computer Science, Queen's University Belfast (UK), 2021-2022 
-* PhD in Computer Science, University of St Andrews (UK), 2022-present
+* PhD in Computer Science, University of St Andrews (UK), 2021-present
 
 Work experience
 ======
