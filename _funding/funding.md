@@ -4,7 +4,7 @@ title: "Scholarships"
 author_profile: true
 redirect_from: 
   - /md/
-  - /scholarships.html
+  - /funding.html
 ---
 
 1. University of St Andrews Research Scholarship, Feb. 2022 - Jul. 2025, sponsored by Rakuten Mobile  – equivalent to £133,277 covering international tuition fees and living expenses.

@@ -4,7 +4,7 @@ title: "Work"
 author_profile: true
 redirect_from: 
   - /md/
-  - /work.html
+  - /activities.html
 ---
 
 1. Noah Ark's Lab in Huawei Technologies Co., Ltd, Algorithm Engineer, Dec. 2018 - July. 2021

@@ -216,19 +216,19 @@ defaults:
       author_profile: true
       share: true
       comment: true
-  # _scholarships
+  # _funding
   - scope:
       path: ""
-      type: scholarships
+      type: funding
     values:
       layout: single
       author_profile: true
       share: true
       comment: true
-  # _work
+  # _activities
   - scope:
       path: ""
-      type: work
+      type: activities
     values:
       layout: talk
       author_profile: true
