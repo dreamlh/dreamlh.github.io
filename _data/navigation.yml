@@ -6,11 +6,11 @@ main:
   - title: "Projects"
     url: /projects/
 
-  - title: "Scholarships"
-    url: /scholarships/
+  - title: "Funding"
+    url: /funding/
 
-  - title: "Work"
-    url: /work/
+  - title: "Activities"
+    url: /activities/
 
-  - title: "CV"
-    url: /cv/
+#  - title: "CV"
+#    url: /cv/
