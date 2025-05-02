@@ -1,16 +1,12 @@
 ---
-permalink: /scholarships/
-title: "Scholarships"
+permalink: /funding/
+title: "Funding"
 author_profile: true
 redirect_from: 
   - /md/
   - /funding.html
 ---
 
-1. University of St Andrews Research Scholarship, Feb. 2022 - Jul. 2025, sponsored by Rakuten Mobile  – equivalent to £133,277 covering international tuition fees and living expenses.
+1. Innovate UK Cyber Security Academic Startup Accelerator Programme £92,000, Apr. 2024 - Feb. 2025
 
-2. Queen’s University Belfast Research Scholarship, Oct. 2021 - Feb. 2022, sponsored by Rakuten Mobile – equivalent to £12,536 covering international tuition fees and living expenses.
-    
-3. Informatics International Master's Scholarship, Nov. 2017, University of Edinburgh – equivalent to £2,000.
-
-4. Hua Luogeng Schorlarship, Dec. 2016, Shandong University.
+2. PhD Scholarship sponsored by Rakuten Mobile Equivalent to £122,042, Feb. 2022 - Jul. 2025

@@ -6,6 +6,3 @@ redirect_from:
   - /md/
   - /projects.html
 ---
-
-
-TBC

@@ -1,11 +1,22 @@
 ---
-permalink: /work/
-title: "Work"
+permalink: /activities/
+title: "Activities"
 author_profile: true
 redirect_from: 
   - /md/
   - /activities.html
 ---
 
-1. Noah Ark's Lab in Huawei Technologies Co., Ltd, Algorithm Engineer, Dec. 2018 - July. 2021
-    * Responsible for tackling vehicle routing problems and bin packing problems with exact algorithms (mixed-integer programming, tree search, etc.) and heuristics (machine learning, simulated annealing, etc.), and visualising the 3D packing results.
+1. Program Committee Member:
+    * IEEE International Conference on Distributed Computing Systems (ICDCS) 2025 Poster Session
+
+2. Reviewer for Peer-Reviewed Venues: 
+    * IEEE Transactions on Parallel and Distributed Systems (TPDS)
+    * IEEE Transactions on Mobile Computing (TMC)
+    * IEEE Transactions on Services Computing (TSC)
+    * Future Generation Computer Systems (FGCS)
+    * IEEE International Conference on Distributed Computing Systems (ICDCS) 2025
+
+3. Invited Talks:
+   * School of Computing Science at University of Glasgow, 2022, "Privacy and Efficiency in Edge AI Systems".
+   * UK Systems Research Challenges Workshop, 2023, “PipeLearn: Pipeline Parallelism for Collaborative Machine Learning Systems”.
