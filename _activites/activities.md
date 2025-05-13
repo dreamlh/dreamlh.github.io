@@ -18,5 +18,5 @@ redirect_from:
     * IEEE International Conference on Distributed Computing Systems (ICDCS) 2025
 
 3. Invited Talks:
-   * School of Computing Science at University of Glasgow, 2022, "PipeLearn: Pipeline Parallelism for Collaborative Machine Learning".
+   * Scottish Autonomous Networked Systems Event at University of Glasgow, 2022, "PipeLearn: Pipeline Parallelism for Collaborative Machine Learning".
    * UK Systems Research Challenges Workshop, 2023, “PipeLearn: Pipeline Parallelism for Collaborative Machine Learning Systems”.
