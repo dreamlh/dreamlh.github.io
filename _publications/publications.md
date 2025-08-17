@@ -42,6 +42,7 @@ Shijing He, Yaxiong Lei, **Zihan Zhang**, Yuzhou Sun, Shujun Li, Chi Zhang, Juan
 **Identity Deepfake Threats to Biometric Authentication: Public and Expert Perspectives.**  
 _Under review at the USENIX Security 2026._ 
 [arXiv](https://arxiv.org/abs/2506.06825)
+
 ---
 
 
