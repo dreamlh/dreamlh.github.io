@@ -7,27 +7,6 @@ redirect_from:
   - /publications.html
 ---
 
-## Under Review / Submitted
-
-**Zihan Zhang**, Leon Wong, Blesson Varghese. 2025.
-**Resource Utilization Optimized Federated Learning.**
-_Under review at ACM Multimedia 2025._  
-[arXiv](https://arxiv.org/abs/2504.13850)
-
----
-
-**Zihan Zhang**, Leon Wong, Blesson Varghese. 2025.
-**FedGrail: Beyond Split Federated Learning.**  
-_Under review at the 31st Annual International Conference on Mobile Computing and Networking._  
-
----
-
-Shijing He, Yaxiong Lei, **Zihan Zhang**, Yuzhou Sun, Shujun Li, Chi Zhang, Juan Ye. 2025. 
-**Identity Deepfake Threats to Biometric Authentication: Public and Expert Perspectives.**  
-_Under review at the ACM Conference on Computer and Communications Security 2025._  
-
----
-
 ## Published
 
 **Zihan Zhang**, Philip Rodgers, Peter Kilpatrick, Ivor Spence, Blesson Varghese. 2024.
@@ -43,6 +22,29 @@ _Proceedings of the 30th ACM International Conference on Information and Knowled
 
 ---
 
+## Under Review / Submitted
+
+**Zihan Zhang**, Leon Wong, Blesson Varghese. 2025.
+**Resource Utilization Optimized Federated Learning.**
+_Under review at the Future Generation Computer Systems._  
+[arXiv](https://arxiv.org/abs/2504.13850)
+
+---
+
+**Zihan Zhang**, Leon Wong, Blesson Varghese. 2025.
+**Ampere: Communication-Efficient and High-Accuracy Split Federated Learning.**  
+_Under review at the IEEE Transactions on Parallel and Distributed Systems._  
+[arXiv](https://arxiv.org/abs/2507.07130)
+
+---
+
+Shijing He, Yaxiong Lei, **Zihan Zhang**, Yuzhou Sun, Shujun Li, Chi Zhang, Juan Ye. 2025. 
+**Identity Deepfake Threats to Biometric Authentication: Public and Expert Perspectives.**  
+_Under review at the USENIX Security 2026._ 
+[arXiv](https://arxiv.org/abs/2506.06825)
+---
+
+
 ## Patents
 
 **Collaborative Training with Parallel Operations**, US2024394555A1, filed by Rakuten Mobile Inc., inventors **Zihan Zhang**, Blesson Varghese, Philip Rodgers, Ivor Spence, and Peter Kilpatrick, published on November 28, 2024.
@@ -50,3 +52,7 @@ _Proceedings of the 30th ACM International Conference on Information and Knowled
 ---
 
 **Federated Learning with Increased Resource Utilization**, PI24-00172US01, Application No. 18/803,957, filed on August 14, 2024, in the United States of America, inventors **Zihan Zhang**, Leon Wong and Blesson Varghese.
+
+---
+
+**Federated Learning with Unidirectional Inter-Block Training**, Under preparation for US patent, inventors **Zihan Zhang**, Leon Wong and Blesson Varghese.
