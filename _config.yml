@@ -207,15 +207,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _projects
-  - scope:
-      path: ""
-      type: projects
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
   # _funding
   - scope:
       path: ""
@@ -233,6 +224,7 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+      comment: true
 
 # Sass/SCSS
 sass:
