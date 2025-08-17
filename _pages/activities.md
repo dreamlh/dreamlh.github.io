@@ -32,8 +32,11 @@ author_profile: true
 
 * [Seminar of HCI](https://www.seminarofhci.com/home) (2023–present). A global academic seminar series connecting Chinese HCI researchers across institutions. 
 * [EMO 2021 Competition](https://www.noahlab.com.hk/logistics-ranking/#/home/the-competition): Evolutionary Multi-Criterion Optimisation challenge co-organised with Huawei Noah’s Ark Lab, City University of Hong Kong and Southern University of Science and Technology.
+
 ---
 
 ## Demo Presentation:
 
 * [CyberASAP Y8 Demo Day](https://iuk-business-connect.org.uk/events/cyberasap-year-8-demo-day/). Presented LockEyeGaze to investors, academic experts, and government representatives.
+
+---
