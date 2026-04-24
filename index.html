@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zihan Zhang — Personal Page</title>
+  <meta name="description" content="Zihan Zhang — Edge AI researcher and Advisory AI Engineer at Lenovo, PhD from University of St Andrews. Specialising in AI infrastructure, distributed systems, and federated learning.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
   <style>
@@ -296,6 +297,7 @@
       color: #444;
       margin-top: 0.35rem;
     }
+    .exp-desc p { margin-bottom: 0.2rem; }
     .exp-desc ul { padding-left: 1.2rem; margin-top: 0.25rem; }
     .exp-desc li { margin-bottom: 0.2rem; }
 
@@ -411,6 +413,9 @@
       margin-right: auto;
     }
 
+    /* ── Scroll offset for sticky nav ── */
+    section, #about { scroll-margin-top: 64px; }
+
     /* ── Responsive ── */
     @media (max-width: 620px) {
       #about { grid-template-columns: 1fr; justify-items: center; }
@@ -490,9 +495,7 @@
           <div class="exp-title">Advisory AI Engineer</div>
           <div class="exp-org"><a href="https://www.lenovo.com/" target="_blank" rel="noopener">Lenovo</a></div>
           <div class="exp-desc">
-            <ul>
-              Building a hybrid AI vision at Lenovo AI Technology Centre (LATC).
-            </ul>
+            <p>Building a hybrid AI vision at Lenovo AI Technology Centre (LATC).</p>
           </div>
         </div>
       </div>
@@ -503,8 +506,8 @@
           <div class="exp-title">PhD Researcher</div>
           <div class="exp-org"><a href="https://edgehub.co.uk/" target="_blank" rel="noopener">University of St Andrews</a></div>
           <div class="exp-desc">
+            <p>My research focused on high-efficiency and privacy-preserving distributed machine learning on edge devices.</p>
             <ul>
-              My research focused on high-efficiency and privacy-preserving distributed machine learning on edge devices.
               <li>Built a distributed ML system for training language models and CNNs across 100+ edge devices; reduced end-to-end training time and improved model accuracy.</li>
               <li>Reconstructed training pipeline, overlapping computation with communication; reduce device–server communication and on-device computation.</li>
               <li>Engineered pipeline parallelism and async aggregation to minimise idle time on heterogeneous devices; stabilised throughput under stragglers and intermittent connectivity.</li>
@@ -520,8 +523,8 @@
           <div class="exp-title">Co-Founder, Edge AI Expert</div>
           <div class="exp-org">LockEyeGaze (Part-Time)</div>
           <div class="exp-desc">
+            <p>I was dedicated to designing and developing eye-tracking-based authentication on edge devices that is highly accurate and requires no additional equipment.</p>
             <ul>
-              I was dedicated to designing and developing eye-tracking-based authentication on edge devices that is highly accurate and requires no additional equipment.
               <li>Addressed GenAI-era vulnerabilities in face/voice biometrics by shifting to gaze signals; co-authored the winning CyberASAP bid and secured £92k to deliver a PoC and roadmap.</li>
               <li>Architected an eye-tracking authentication system end to end (capture → calibration → estimation → embedding → matching) with challenge–response and basic liveness checks.</li>
               <li>Collected 100+ participant sessions on phone and laptop.</li>
@@ -537,8 +540,8 @@
           <div class="exp-title">Research Engineer</div>
           <div class="exp-org"><a href="http://dev3.noahlab.com.hk/" target="_blank" rel="noopener">Noah's Ark Lab (AI Lab), Huawei</a></div>
           <div class="exp-desc">
+            <p>As a research/algorithm engineer at Huawei Noah's Ark Lab, I used machine learning to optimise Huawei's supply chain.</p>
             <ul>
-              As a research/algorithm engineer at Huawei Noah's Ark Lab, I used machine learning to optimise Huawei's supply chain.
               <li>Delivered a distributed ML-driven optimisation system for logistics (packing + routing); increased average packing rate; reduced annual logistics cost by several million USD in production.</li>
               <li>Built a configurable constraint framework and a learning-based solver, delivered as a tested algorithm library with API contracts; platform team containerised and deployed it on Huawei Cloud.</li>
               <li>Co-organised the EMO 2021 competition: shipped a standardised Docker image, automated evaluation tool, and a reproducible baseline; open-sourced the winning solution on GitHub.</li>
@@ -592,26 +595,14 @@
     <div class="pub-list">
 
       <div class="pub">
-        <div class="pub-year">2021</div>
+        <div class="pub-year">2025</div>
         <div>
-          <div class="pub-title">Learning to Pack: A Data-Driven Tree Search Algorithm for Large-Scale 3D Bin Packing Problem</div>
-          <div class="pub-authors">Qianwen Zhu, Xihan Li, <strong>Zihan Zhang</strong>, Zhixing Luo, Xialiang Tong, Mingxuan Yuan, Jia Zeng</div>
-          <div class="pub-venue">Proceedings of the 30th ACM International Conference on Information &amp; Knowledge Management (CIKM '21)</div>
+          <div class="pub-title">Ampere: Communication-Efficient and High-Accuracy Split Federated Learning</div>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong, Blesson Varghese</div>
+          <div class="pub-venue">Under review by <em>IEEE Transactions on Parallel and Distributed Systems (IEEE TPDS)</em> &nbsp;·&nbsp; arXiv:2507.07130</div>
           <div class="pub-links">
-            <a href="https://dl.acm.org/doi/10.1145/3459637.3481933">[DOI]</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2024</div>
-        <div>
-          <div class="pub-title">PiPar: Pipeline Parallelism for Collaborative Machine Learning</div>
-          <div class="pub-authors"><strong>Zihan Zhang</strong>, Philip Rodgers, Peter Kilpatrick, Ivor Spence, Blesson Varghese</div>
-          <div class="pub-venue">Journal of Parallel and Distributed Computing, Vol. 193</div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.jpdc.2024.104947">[DOI]</a>
-            <a href="https://github.com/blessonvar/PipeLearn">[Code]</a>
+            <a href="https://arxiv.org/abs/2507.07130">[arXiv]</a>
+            <a href="https://github.com/blessonvar/Ampere">[Code]</a>
           </div>
         </div>
       </div>
@@ -632,24 +623,36 @@
       <div class="pub">
         <div class="pub-year">2025</div>
         <div>
-          <div class="pub-title">Ampere: Communication-Efficient and High-Accuracy Split Federated Learning</div>
-          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong, Blesson Varghese</div>
-          <div class="pub-venue">Under review by <em>IEEE Transactions on Parallel and Distributed Systems (IEEE TPDS)</em> &nbsp;·&nbsp; arXiv:2507.07130</div>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2507.07130">[arXiv]</a>
-            <a href="https://github.com/blessonvar/Ampere">[Code]</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2025</div>
-        <div>
           <div class="pub-title">Identity Deepfake Threats to Biometric Authentication Systems: Public and Expert Perspectives</div>
           <div class="pub-authors">Shijing He, Yaxiong Lei, <strong>Zihan Zhang</strong>, Yuzhou Sun, Shujun Li, Chi Zhang, Juan Ye</div>
           <div class="pub-venue"><em>arXiv preprint</em> arXiv:2506.06825</div>
           <div class="pub-links">
             <a href="https://arxiv.org/abs/2506.06825">[arXiv]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-title">PiPar: Pipeline Parallelism for Collaborative Machine Learning</div>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Philip Rodgers, Peter Kilpatrick, Ivor Spence, Blesson Varghese</div>
+          <div class="pub-venue">Journal of Parallel and Distributed Computing, Vol. 193</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.jpdc.2024.104947">[DOI]</a>
+            <a href="https://github.com/blessonvar/PipeLearn">[Code]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-title">Learning to Pack: A Data-Driven Tree Search Algorithm for Large-Scale 3D Bin Packing Problem</div>
+          <div class="pub-authors">Qianwen Zhu, Xihan Li, <strong>Zihan Zhang</strong>, Zhixing Luo, Xialiang Tong, Mingxuan Yuan, Jia Zeng</div>
+          <div class="pub-venue">Proceedings of the 30th ACM International Conference on Information &amp; Knowledge Management (CIKM '21)</div>
+          <div class="pub-links">
+            <a href="https://dl.acm.org/doi/10.1145/3459637.3481933">[DOI]</a>
           </div>
         </div>
       </div>
@@ -661,6 +664,15 @@
   <section id="patents">
     <h2>Patents</h2>
     <div class="pub-list">
+
+      <div class="pub">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Federated Learning with Unidirectional Inter-Block Training</div>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong and Blesson Varghese</div>
+          <div class="pub-venue">US Patent (Filed Mar 2025)</div>
+        </div>
+      </div>
 
       <div class="pub">
         <div class="pub-year">2024</div>
@@ -675,20 +687,11 @@
       </div>
 
       <div class="pub">
-        <div class="pub-year">2025</div>
-        <div>
-          <div class="pub-title">Federated Learning with Unidirectional Inter-Block Training</div>
-          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong and Blesson Varghese</div>
-          <div class="pub-venue">Filed Mar 2025</div>
-        </div>
-      </div>
-
-      <div class="pub">
         <div class="pub-year">2024</div>
         <div>
           <div class="pub-title">Federated Learning with Increased Resource Utilization</div>
           <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong and Blesson Varghese</div>
-          <div class="pub-venue">Filed Aug 2024</div>
+          <div class="pub-venue">US Patent (Filed Aug 2024)</div>
         </div>
       </div>
 
@@ -704,23 +707,23 @@
         <div class="award-year">2025</div>
         <div>
           <div class="award-name">King's Start-Up Accelerator</div>
-          <div class="award-org">In-kind support — workspace, mentoring, networking</div>
+          <div class="award-org">King's College London &nbsp;·&nbsp; In-kind support — workspace, mentoring, networking</div>
         </div>
       </div>
 
       <div class="award">
         <div class="award-year">2024</div>
         <div>
-          <div class="award-name">Innovate UK Cyber Security Academic Startup Accelerator Programme Y8</div>
-          <div class="award-org">£92k grant</div>
+          <div class="award-name">Cyber Security Academic Startup Accelerator Programme (CyberASAP) Y8</div>
+          <div class="award-org">Innovate UK &nbsp;·&nbsp; £92k grant</div>
         </div>
       </div>
 
       <div class="award">
         <div class="award-year">2021</div>
         <div>
-          <div class="award-name">PhD Scholarship sponsored by Rakuten Mobile Inc., Japan</div>
-          <div class="award-org">Fully funded, ~£150k</div>
+          <div class="award-name">PhD Scholarship</div>
+          <div class="award-org">Rakuten Mobile Inc., Japan &nbsp;·&nbsp; Fully funded, ~£150k</div>
         </div>
       </div>
 
@@ -728,7 +731,7 @@
         <div class="award-year">2020</div>
         <div>
           <div class="award-name">Rising Star Award</div>
-          <div class="award-org">Huawei Technologies — Top 10% by performance</div>
+          <div class="award-org">Huawei Technologies &nbsp;·&nbsp; Top 10% by performance</div>
         </div>
       </div>
 
@@ -736,7 +739,7 @@
         <div class="award-year">2017</div>
         <div>
           <div class="award-name">Informatics International Master's Scholarship</div>
-          <div class="award-org">University of Edinburgh — ≤10 per cohort</div>
+          <div class="award-org">University of Edinburgh &nbsp;·&nbsp; ≤10 per cohort</div>
         </div>
       </div>
 
@@ -744,7 +747,7 @@
         <div class="award-year">2016</div>
         <div>
           <div class="award-name">Hua Luogeng Scholarship</div>
-          <div class="award-org">Shandong University — ≤15 per cohort</div>
+          <div class="award-org">Shandong University &nbsp;·&nbsp; ≤15 per cohort</div>
         </div>
       </div>
 
