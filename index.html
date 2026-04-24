@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zihan Zhang — Personal Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #2c5f8a;
+      --accent-light: #e8f1f8;
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #d4d8dd;
+      --bg: #fafafa;
+      --card: #ffffff;
+      --max-w: 900px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── Navigation ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+    nav .brand {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* ── Layout ── */
+    .page { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem 4rem; }
+
+    /* ── Hero ── */
+    #about {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      padding: 3.5rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .avatar-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      display: block;
+    }
+    .social-icons {
+      display: grid;
+      grid-template-columns: repeat(3, 34px);
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 0.75rem;
+    }
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .social-icons a i { font-size: 0.95rem; line-height: 1; }
+    .social-icons a:hover { background: var(--accent); color: #fff; }
+    .location {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+    .hero-text .subtitle {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 0.3rem;
+    }
+    .hero-text .affil {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+    .hero-text .bio {
+      margin-top: 1.2rem;
+      font-size: 0.97rem;
+      color: #333;
+    }
+
+    /* ── Section ── */
+    section { padding: 2.5rem 0 0; }
+    section + section { border-top: 1px solid var(--border); margin-top: 2.5rem; }
+
+    h2 {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Research interests ── */
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid #b8d0e6;
+      border-radius: 3px;
+      padding: 3px 10px;
+    }
+
+    /* ── Publication entry ── */
+    .pub-list { display: flex; flex-direction: column; gap: 1.4rem; }
+    .pub {
+      display: grid;
+      grid-template-columns: 2.2rem 1fr;
+      gap: 0 0.8rem;
+    }
+    .pub-year {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding-top: 0.18rem;
+      font-weight: 600;
+    }
+    .pub-title {
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+    .pub-authors {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .pub-venue {
+      font-size: 0.88rem;
+      font-style: italic;
+      color: #444;
+    }
+    .pub-links {
+      margin-top: 0.2rem;
+      display: flex;
+      gap: 0.7rem;
+    }
+    .pub-links a {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .pub-links a:hover { border-color: var(--accent); }
+
+    /* ── Experience ── */
+    .exp-list { display: flex; flex-direction: column; gap: 1.6rem; }
+    .exp {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 0 1.2rem;
+    }
+    .exp-period {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding-top: 0.2rem;
+    }
+    .exp-title {
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+    .exp-org {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.88rem;
+      color: var(--accent);
+    }
+    .exp-org a, .edu-school a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .exp-org a:hover, .edu-school a:hover { border-color: var(--accent); }
+    .exp-desc {
+      font-size: 0.88rem;
+      color: #444;
+      margin-top: 0.35rem;
+    }
+    .exp-desc ul { padding-left: 1.2rem; margin-top: 0.25rem; }
+    .exp-desc li { margin-bottom: 0.2rem; }
+
+    /* ── Education ── */
+    .edu-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .edu {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 0 1.2rem;
+    }
+    .edu-period {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding-top: 0.18rem;
+    }
+    .edu-degree { font-weight: bold; font-size: 0.95rem; }
+    .edu-school { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.88rem; color: var(--accent); }
+    .edu-note { font-size: 0.85rem; color: #555; }
+
+    /* ── Awards ── */
+    .award-list { display: flex; flex-direction: column; gap: 0.9rem; }
+    .award {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 0 0.8rem;
+      align-items: start;
+    }
+    .award-year {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      padding-top: 0.12rem;
+    }
+    .award-name { font-size: 0.92rem; }
+    .award-org { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── Activities ── */
+    .activities-list { display: flex; flex-direction: column; gap: 1.4rem; }
+    .activity-group h3 {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .activity-group ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .activity-group li {
+      font-size: 0.9rem;
+      color: #333;
+      padding-left: 0.9rem;
+      position: relative;
+      line-height: 1.55;
+    }
+    .activity-group li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .activity-date {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .activity-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .activity-link:hover { border-color: var(--accent); }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+    .skill-group h3 {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .skill-group p { font-size: 0.88rem; color: #333; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
+      color: #aaa;
+      max-width: var(--max-w);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 620px) {
+      #about { grid-template-columns: 1fr; justify-items: center; }
+      .hero-text { text-align: center; }
+      .social-icons { justify-content: center; }
+      .exp, .edu, .award { grid-template-columns: 1fr; }
+      .exp-period, .edu-period, .award-year { color: var(--accent); font-size: 0.75rem; }
+      .pub { grid-template-columns: 1fr; }
+      .pub-year { display: inline; margin-right: 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="#about">Zihan Zhang</a>
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#patents">Patents</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ══ Hero / About ══ -->
+  <div id="about">
+    <div class="avatar-wrap">
+      <img class="avatar" src="Zihan_avatar.jpeg" alt="Zihan Zhang">
+      <div class="social-icons">
+        <a href="https://scholar.google.com/citations?user=2LlGzyUAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg></a>
+        <a href="https://github.com/dreamlh" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/zanezihanzhang/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:ZihanZhang1994@outlook.com" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.researchgate.net/profile/Zihan-Zhang-71" target="_blank" rel="noopener" aria-label="ResearchGate" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+        <a href="https://orcid.org/0000-0002-3129-3550" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><i class="fab fa-orcid"></i></a>
+      </div>
+      <span class="location"><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/place/Edinburgh" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Edinburgh, UK</a></span>
+    </div>
+    <div class="hero-text">
+      <h1>Zihan Zhang</h1>
+      <div class="subtitle">Edge AI PhD Researcher &amp; UK Global Talent Visa Holder</div>
+      <div class="affil">Lenovo &nbsp;·&nbsp; Distributed/Edge ML Systems</div>
+      <p class="bio">
+        I am an Edge AI researcher bridging academia and industry. As an advisory AI engineer at Lenovo, I am building an edge-cloud collaborative AI distributed system. During my PhD at the University of St Andrews, I specialised in resource-efficient distributed ML on edge devices. I collaborated with Rakuten Mobile to produce multiple US patents and peer-reviewed publications. In parallel, as the co-founder for LockEyeGaze, our team secured £92k from Innovate UK CyberASAP and built a real-time gaze-based authentication PoC against GenAI spoofing. Previously at Huawei Noah's Ark Lab, I delivered an ML-driven logistics optimiser achieving multi-million USD/year savings.
+      </p>
+    </div>
+  </div>
+
+  <!-- ══ Research Interests ══ -->
+  <section id="research">
+    <h2>Research Interests</h2>
+    <div class="tags">
+      <span class="tag">Distributed ML</span>
+      <span class="tag">Edge Computing</span>
+      <span class="tag">Federated Learning</span>
+      <span class="tag">Pipeline Parallelism</span>
+      <span class="tag">Large Language Models</span>
+      <span class="tag">ML Systems</span>
+    </div>
+  </section>
+
+    <!-- ══ Experience ══ -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="exp-list">
+      <div class="exp">
+        <div class="exp-period">Feb 2026 - present</div>
+        <div>
+          <div class="exp-title">Advisory AI Engineer</div>
+          <div class="exp-org"><a href="https://www.lenovo.com/" target="_blank" rel="noopener">Lenovo</a></div>
+          <div class="exp-desc">
+            <ul>
+              Building a hybrid AI vision at Lenovo AI Technology Centre (LATC).
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-period">Oct 2021 – Jan 2026</div>
+        <div>
+          <div class="exp-title">PhD Researcher</div>
+          <div class="exp-org"><a href="https://edgehub.co.uk/" target="_blank" rel="noopener">University of St Andrews</a></div>
+          <div class="exp-desc">
+            <ul>
+              My research focused on high-efficiency and privacy-preserving distributed machine learning on edge devices.
+              <li>Built a distributed ML system for training language models and CNNs across 100+ edge devices; reduced end-to-end training time and improved model accuracy.</li>
+              <li>Reconstructed training pipeline, overlapping computation with communication; reduce device–server communication and on-device computation.</li>
+              <li>Engineered pipeline parallelism and async aggregation to minimise idle time on heterogeneous devices; stabilised throughput under stragglers and intermittent connectivity.</li>
+              <li>Industry collaboration with Rakuten Mobile Japan: multiple US patents and top-tier publications.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-period">Mar 2024 – Dec 2025</div>
+        <div>
+          <div class="exp-title">Co-Founder, Edge AI Expert</div>
+          <div class="exp-org">LockEyeGaze (Part-Time)</div>
+          <div class="exp-desc">
+            <ul>
+              I was dedicated to designing and developing eye-tracking-based authentication on edge devices that is highly accurate and requires no additional equipment.
+              <li>Addressed GenAI-era vulnerabilities in face/voice biometrics by shifting to gaze signals; co-authored the winning CyberASAP bid and secured £92k to deliver a PoC and roadmap.</li>
+              <li>Architected an eye-tracking authentication system end to end (capture → calibration → estimation → embedding → matching) with challenge–response and basic liveness checks.</li>
+              <li>Collected 100+ participant sessions on phone and laptop.</li>
+              <li>Developed and delivered a PoC at CyberASAP Demo Day.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-period">Dec 2018 – Jul 2021</div>
+        <div>
+          <div class="exp-title">Research Engineer</div>
+          <div class="exp-org"><a href="http://dev3.noahlab.com.hk/" target="_blank" rel="noopener">Noah's Ark Lab (AI Lab), Huawei</a></div>
+          <div class="exp-desc">
+            <ul>
+              As a research/algorithm engineer at Huawei Noah's Ark Lab, I used machine learning to optimise Huawei's supply chain.
+              <li>Delivered a distributed ML-driven optimisation system for logistics (packing + routing); increased average packing rate; reduced annual logistics cost by several million USD in production.</li>
+              <li>Built a configurable constraint framework and a learning-based solver, delivered as a tested algorithm library with API contracts; platform team containerised and deployed it on Huawei Cloud.</li>
+              <li>Co-organised the EMO 2021 competition: shipped a standardised Docker image, automated evaluation tool, and a reproducible baseline; open-sourced the winning solution on GitHub.</li>
+              <li>Mentored an intern and co-authored an ACM CIKM paper on ML for large-scale optimisation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ Education ══ -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-list">
+
+      <div class="edu">
+        <div class="edu-period">Oct 2021 – Jan 2026</div>
+        <div>
+          <div class="edu-degree">PhD in Computer Science</div>
+          <div class="edu-school"><a href="https://edgehub.co.uk/" target="_blank" rel="noopener">University of St Andrews</a></div>
+          <div class="edu-note">Distributed/Edge ML Systems &nbsp;·&nbsp; Supervisor: Prof. Blesson Varghese</div>
+        </div>
+      </div>
+
+      <div class="edu">
+        <div class="edu-period">Sep 2017 – Nov 2018</div>
+        <div>
+          <div class="edu-degree">M.Sc. Data Science</div>
+          <div class="edu-school"><a href="https://www.ed.ac.uk/" target="_blank" rel="noopener">University of Edinburgh</a></div>
+          <div class="edu-note">Distinction (78/100)</div>
+        </div>
+      </div>
+
+      <div class="edu">
+        <div class="edu-period">Sep 2013 – Jun 2017</div>
+        <div>
+          <div class="edu-degree">B.Sc. Mathematics and Applied Mathematics</div>
+          <div class="edu-school"><a href="https://www.sdu.edu.cn/" target="_blank" rel="noopener">Shandong University</a></div>
+          <div class="edu-note">Upper Second-Class Honours &nbsp;·&nbsp; Hua Luogeng Class</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ Publications ══ -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="pub-list">
+
+      <div class="pub">
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-title">PiPar: Pipeline Parallelism for Collaborative Machine Learning</div>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Philip Rodgers, Peter Kilpatrick, Ivor Spence, Blesson Varghese</div>
+          <div class="pub-venue">Journal of Parallel and Distributed Computing, Vol. 193</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.jpdc.2024.104947">[DOI]</a>
+            <a href="https://github.com/blessonvar/PipeLearn">[Code]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Resource Utilization Optimized Federated Learning</div>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong, Blesson Varghese</div>
+          <div class="pub-venue">Under review by <em>Future Generation Computer Systems (FGCS)</em> &nbsp;·&nbsp; arXiv:2504.13850</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2504.13850">[arXiv]</a>
+            <a href="https://github.com/blessonvar/FedOptima">[Code]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Ampere: Communication-Efficient and High-Accuracy Split Federated Learning</div>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong, Blesson Varghese</div>
+          <div class="pub-venue">Under review by <em>IEEE Transactions on Parallel and Distributed Systems (IEEE TPDS)</em> &nbsp;·&nbsp; arXiv:2507.07130</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2507.07130">[arXiv]</a>
+            <a href="https://github.com/blessonvar/Ampere">[Code]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Identity Deepfake Threats to Biometric Authentication Systems: Public and Expert Perspectives</div>
+          <div class="pub-authors">Shijing He, Yaxiong Lei, <strong>Zihan Zhang</strong>, Yuzhou Sun, Shujun Li, Chi Zhang, Juan Ye</div>
+          <div class="pub-venue"><em>arXiv preprint</em> arXiv:2506.06825</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2506.06825">[arXiv]</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ Patents ══ -->
+  <section id="patents">
+    <h2>Patents</h2>
+    <div class="pub-list">
+
+      <div class="pub">
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-title">Collaborative Training with Parallel Operations</div>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Blesson Varghese, Philip Rodgers, Ivor Spence, and Peter Kilpatrick</div>
+          <div class="pub-venue">US Patent 20240394555A1 (Published Nov 2024)</div>
+          <div class="pub-links">
+            <a href="https://patents.google.com/patent/US20240394555A1/en">[Google Patents]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Federated Learning with Unidirectional Inter-Block Training</div>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong and Blesson Varghese</div>
+          <div class="pub-venue">Filed Mar 2025</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-title">Federated Learning with Increased Resource Utilization</div>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong and Blesson Varghese</div>
+          <div class="pub-venue">Filed Aug 2024</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ Awards & Honours ══ -->
+  <section id="awards">
+    <h2>Awards &amp; Honours</h2>
+    <div class="award-list">
+
+      <div class="award">
+        <div class="award-year">2025</div>
+        <div>
+          <div class="award-name">King's Start-Up Accelerator</div>
+          <div class="award-org">In-kind support — workspace, mentoring, networking</div>
+        </div>
+      </div>
+
+      <div class="award">
+        <div class="award-year">2024</div>
+        <div>
+          <div class="award-name">Innovate UK Cyber Security Academic Startup Accelerator Programme Y8</div>
+          <div class="award-org">£92k grant</div>
+        </div>
+      </div>
+
+      <div class="award">
+        <div class="award-year">2021</div>
+        <div>
+          <div class="award-name">PhD Scholarship sponsored by Rakuten Mobile Inc., Japan</div>
+          <div class="award-org">Fully funded, ~£150k</div>
+        </div>
+      </div>
+
+      <div class="award">
+        <div class="award-year">2020</div>
+        <div>
+          <div class="award-name">Rising Star Award</div>
+          <div class="award-org">Huawei Technologies — Top 10% by performance</div>
+        </div>
+      </div>
+
+      <div class="award">
+        <div class="award-year">2017</div>
+        <div>
+          <div class="award-name">Informatics International Master's Scholarship</div>
+          <div class="award-org">University of Edinburgh — ≤10 per cohort</div>
+        </div>
+      </div>
+
+      <div class="award">
+        <div class="award-year">2016</div>
+        <div>
+          <div class="award-name">Hua Luogeng Scholarship</div>
+          <div class="award-org">Shandong University — ≤15 per cohort</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ Skills ══ -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Programming</h3>
+        <p>Python, Java, Scala, SQL</p>
+      </div>
+      <div class="skill-group">
+        <h3>ML / AI</h3>
+        <p>PyTorch, TensorFlow, Scikit-Learn, LangChain, NumPy, Pandas, OpenCV</p>
+      </div>
+      <div class="skill-group">
+        <h3>Systems</h3>
+        <p>Linux, Docker, Kubernetes, Slurm (HPC), GCP, Vertex AI, Apache Spark, Dask</p>
+      </div>
+      <div class="skill-group">
+        <h3>Backend &amp; DevOps</h3>
+        <p>FastAPI, Flask, Bash, CI/CD (GitHub Actions)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Activities ══ -->
+  <section id="activities">
+    <h2>Activities</h2>
+    <div class="activities-list">
+
+      <div class="activity-group">
+        <h3>Program Committee Service</h3>
+        <ul>
+          <li>Poster Session Program Committee Member, IEEE International Conference on Distributed Computing Systems (ICDCS) 2025</li>
+        </ul>
+      </div>
+
+      <div class="activity-group">
+        <h3>Peer Review Duties</h3>
+        <ul>
+          <li>Reviewer for IEEE Transactions on Parallel and Distributed Systems (TPDS)</li>
+          <li>Reviewer for IEEE Transactions on Mobile Computing (TMC)</li>
+          <li>Reviewer for IEEE Transactions on Services Computing (TSC)</li>
+          <li>Reviewer for Future Generation Computer Systems (FGCS)</li>
+          <li>Reviewer for IEEE International Conference on Distributed Computing Systems (ICDCS) 2025</li>
+        </ul>
+      </div>
+
+      <div class="activity-group">
+        <h3>Invited Presentations</h3>
+        <ul>
+          <li><span class="activity-date">2023</span> &nbsp;<a href="https://uksystems.org/workshop/2023/" target="_blank" rel="noopener" class="activity-link">UK Systems Research Challenges Workshop</a> — &ldquo;PipeLearn: Pipeline Parallelism for Collaborative Machine Learning Systems&rdquo;</li>
+          <li><span class="activity-date">2022</span> &nbsp;<a href="https://scot-ans.github.io/2022/" target="_blank" rel="noopener" class="activity-link">Scottish Autonomous Networked Systems Event</a>, University of Glasgow — &ldquo;PipeLearn: Pipeline Parallelism for Collaborative Machine Learning&rdquo;</li>
+        </ul>
+      </div>
+
+      <div class="activity-group">
+        <h3>Organizing Committee Roles</h3>
+        <ul>
+          <li><span class="activity-date">2023</span> &nbsp;Seminar of HCI — global academic seminar connecting Chinese HCI researchers across institutions</li>
+          <li><span class="activity-date">2021</span> &nbsp;EMO 2021 Competition — co-organized evolutionary optimization challenge with Huawei Noah&rsquo;s Ark Lab, City University of Hong Kong, and Southern University of Science and Technology</li>
+        </ul>
+      </div>
+
+      <div class="activity-group">
+        <h3>Demo Presentation</h3>
+        <ul>
+          <li><a href="https://iuk-business-connect.org.uk/events/cyberasap-year-8-demo-day/" target="_blank" rel="noopener" class="activity-link">CyberASAP Y8 Demo Day</a> — presented LockEyeGaze to investors, academics, and government officials</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ Contact ══ -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="font-size:0.92rem; color:#444;">
+      I am happy to discuss research collaborations, speaking engagements, or general enquiries. Feel free to <a href="mailto:ZihanZhang1994@outlook.com" style="color:var(--accent);">reach out by email</a>.
+    </p>
+  </section>
+
+</div><!-- /page -->
+
+<footer>
+  &copy; 2026 Zihan Zhang &nbsp;·&nbsp; University of St Andrews &nbsp;·&nbsp;
+  Last updated: April 2026
+</footer>
+
+</body>
+</html>
