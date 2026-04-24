@@ -72,6 +72,43 @@
       transition: color 0.2s;
     }
     nav a:hover { color: var(--accent); }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 6px;
+      color: var(--muted);
+      font-size: 1.25rem;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .nav-toggle:hover { color: var(--accent); }
+
+    @media (max-width: 760px) {
+      .nav-toggle { display: block; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 52px;
+        left: 0;
+        right: 0;
+        background: var(--card);
+        border-bottom: 1px solid var(--border);
+        padding: 0.5rem 2rem 1rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      }
+      nav ul.open { display: flex; }
+      nav ul li a {
+        display: block;
+        padding: 0.45rem 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.8rem;
+      }
+      nav ul li:last-child a { border-bottom: none; }
+    }
 
     /* ── Layout ── */
     .page { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem 4rem; }
@@ -391,8 +428,8 @@
 <nav>
   <div class="inner">
     <a class="brand" href="#about">Zihan Zhang</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <ul>
-      <li><a href="#research">Research</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#publications">Publications</a></li>
@@ -424,9 +461,9 @@
     <div class="hero-text">
       <h1>Zihan Zhang</h1>
       <div class="subtitle">Edge AI PhD Researcher &amp; UK Global Talent Visa Holder</div>
-      <div class="affil">Lenovo &nbsp;·&nbsp; Distributed/Edge ML Systems</div>
+      <div class="affil">Lenovo &nbsp;·&nbsp; University of St Andrews &nbsp;·&nbsp; Distributed/Edge ML Systems</div>
       <p class="bio">
-        I am an Edge AI researcher bridging academia and industry. As an advisory AI engineer at Lenovo, I am building an edge-cloud collaborative AI distributed system. During my PhD at the University of St Andrews, I specialised in resource-efficient distributed ML on edge devices. I collaborated with Rakuten Mobile to produce multiple US patents and peer-reviewed publications. In parallel, as the co-founder for LockEyeGaze, our team secured £92k from Innovate UK CyberASAP and built a real-time gaze-based authentication PoC against GenAI spoofing. Previously at Huawei Noah's Ark Lab, I delivered an ML-driven logistics optimiser achieving multi-million USD/year savings.
+        I am an Edge AI researcher bridging academia and industry. As an advisory AI engineer at Lenovo, I am building an edge-cloud collaborative AI infrastructure. During my PhD at the University of St Andrews, I specialised in resource-efficient distributed ML on edge devices. I collaborated with Rakuten Mobile to produce multiple US patents and peer-reviewed publications. In parallel, as the co-founder for LockEyeGaze, our team secured £92k from Innovate UK CyberASAP and built a real-time gaze-based authentication PoC against GenAI spoofing. Previously at Huawei Noah's Ark Lab, I delivered an ML-driven logistics optimiser achieving multi-million USD/year savings.
       </p>
     </div>
   </div>
@@ -435,12 +472,11 @@
   <section id="research">
     <h2>Research Interests</h2>
     <div class="tags">
-      <span class="tag">Distributed ML</span>
+      <span class="tag">AI Infrastructure</span>
+      <span class="tag">Large Language Models</span>
+      <span class="tag">Distributed Systems</span>
       <span class="tag">Edge Computing</span>
       <span class="tag">Federated Learning</span>
-      <span class="tag">Pipeline Parallelism</span>
-      <span class="tag">Large Language Models</span>
-      <span class="tag">ML Systems</span>
     </div>
   </section>
 
@@ -554,6 +590,18 @@
   <section id="publications">
     <h2>Publications</h2>
     <div class="pub-list">
+
+      <div class="pub">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-title">Learning to Pack: A Data-Driven Tree Search Algorithm for Large-Scale 3D Bin Packing Problem</div>
+          <div class="pub-authors">Qianwen Zhu, Xihan Li, <strong>Zihan Zhang</strong>, Zhixing Luo, Xialiang Tong, Mingxuan Yuan, Jia Zeng</div>
+          <div class="pub-venue">Proceedings of the 30th ACM International Conference on Information &amp; Knowledge Management (CIKM '21)</div>
+          <div class="pub-links">
+            <a href="https://dl.acm.org/doi/10.1145/3459637.3481933">[DOI]</a>
+          </div>
+        </div>
+      </div>
 
       <div class="pub">
         <div class="pub-year">2024</div>
@@ -786,9 +834,26 @@
 </div><!-- /page -->
 
 <footer>
-  &copy; 2026 Zihan Zhang &nbsp;·&nbsp; University of St Andrews &nbsp;·&nbsp;
+  &copy; 2026 Zihan Zhang &nbsp;·&nbsp; Lenovo &nbsp;·&nbsp; University of St Andrews &nbsp;·&nbsp;
   Last updated: April 2026
 </footer>
 
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const navUl  = document.querySelector('nav ul');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = navUl.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close menu when a nav link is clicked
+  navUl.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navUl.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
 </body>
 </html>
