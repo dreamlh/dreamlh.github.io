@@ -116,9 +116,12 @@
     .award { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 24px; padding-block: 18px; }
     .award-name { font-size: 16px; line-height: 1.5; }
     .award-org { margin-top: 4px; font-size: 14px; color: var(--muted); }
-    .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 40px; }
-    .skill-group h3, .activity-group h3 { margin-bottom: 9px; font-size: 15px; font-weight: 600; }
-    .skill-group p { font-size: 15px; color: var(--muted); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .skill-group { padding: 24px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+    .skill-group h3 { margin-bottom: 16px; font-size: 16px; font-weight: 600; line-height: 1.5; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
+    .skill-tags li { padding: 4px 10px; border-radius: 4px; background: var(--tint); color: var(--accent-dark); font-size: 13px; line-height: 1.6; }
+    .activity-group h3 { margin-bottom: 9px; font-size: 15px; font-weight: 600; }
     .activities-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; }
     .activity-group ul { padding-left: 18px; font-size: 14px; color: var(--muted); }
     .activity-group li + li { margin-top: 8px; }
@@ -136,6 +139,7 @@
       .avatar { width: 184px; height: 184px; }
       .nav-links { gap: 14px; }
       .work-card { padding: 22px; }
+      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 800px) {
       .nav-inner { position: relative; flex-wrap: wrap; gap: 0; min-height: 68px; }
@@ -535,20 +539,40 @@
     <div class="section-heading"><div><span class="section-number">07 / Toolkit</span><h2 id="skills-title">Technical skills</h2></div></div>
     <div class="skills-grid">
       <div class="skill-group">
-        <h3>Programming</h3>
-        <p>Python, Java, Scala, SQL</p>
+        <h3>Languages &amp; Backend</h3>
+        <ul class="skill-tags" role="list">
+          <li>Python</li><li>Java</li><li>Scala</li><li>TypeScript</li><li>JavaScript</li><li>SQL</li><li>Bash</li><li>FastAPI</li><li>Flask</li>
+        </ul>
       </div>
       <div class="skill-group">
-        <h3>ML / AI</h3>
-        <p>PyTorch, TensorFlow, Scikit-Learn, LangChain, NumPy, Pandas, OpenCV</p>
+        <h3>Machine Learning &amp; AI</h3>
+        <ul class="skill-tags" role="list">
+          <li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>Hugging Face</li><li>LangChain</li><li>LangGraph</li><li>NumPy</li><li>Pandas</li><li>OpenCV</li>
+        </ul>
       </div>
       <div class="skill-group">
-        <h3>Systems</h3>
-        <p>Linux, Docker, Kubernetes, Slurm (HPC), GCP, Vertex AI, Apache Spark, Dask</p>
+        <h3>Cloud &amp; Distributed Systems</h3>
+        <ul class="skill-tags" role="list">
+          <li>AWS</li><li>Linux</li><li>Docker</li><li>Kubernetes</li><li>Slurm</li><li>Apache Spark</li><li>Dask</li>
+        </ul>
       </div>
       <div class="skill-group">
-        <h3>Backend &amp; DevOps</h3>
-        <p>FastAPI, Flask, Bash, CI/CD (GitHub Actions)</p>
+        <h3>MLOps &amp; Delivery</h3>
+        <ul class="skill-tags" role="list">
+          <li>ClearML</li><li>Argo CD</li><li>CI/CD</li><li>Nexus</li><li>Harbor</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Data &amp; Storage</h3>
+        <ul class="skill-tags" role="list">
+          <li>PostgreSQL</li><li>Redis</li><li>MinIO</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Observability</h3>
+        <ul class="skill-tags" role="list">
+          <li>OpenTelemetry</li><li>Grafana</li>
+        </ul>
       </div>
     </div>
   </section>
