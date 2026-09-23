@@ -54,10 +54,9 @@
     .hero { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 72px; align-items: center; padding-block: 76px 70px; }
     .eyebrow, .section-number { font-size: 12px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
     h1 { margin-top: 10px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(48px, 5.5vw, 72px); font-weight: 400; line-height: 1.1; letter-spacing: -.045em; }
+    .name-degree { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 20px; font-weight: 400; letter-spacing: 0; color: var(--muted); white-space: nowrap; }
     .role { margin-top: 22px; font-size: 20px; font-weight: 600; line-height: 1.4; }
     .focus { margin-top: 4px; color: var(--accent); font-size: 18px; text-wrap: balance; }
-    .credentials { margin-top: 8px; color: var(--muted); font-size: 14px; }
-    .credentials strong { color: var(--text); font-weight: 600; }
     .visa-tag { display: inline-flex; align-items: center; gap: 7px; margin-top: 16px; padding: 5px 10px; border: 1px solid var(--border); border-radius: 5px; color: var(--muted); font-size: 12px; line-height: 1.6; }
     .visa-tag svg { width: 15px; height: 15px; }
     .bio { max-width: 65ch; margin-top: 23px; color: var(--muted); font-size: 17px; line-height: 1.8; }
@@ -157,11 +156,14 @@
     @media (max-width: 600px) {
       .page, .nav-inner, .footer-inner { width: calc(100% - 40px); }
       .hero { grid-template-columns: 1fr; gap: 36px; padding-block: 38px 44px; }
+      h1 { font-size: clamp(40px, 12vw, 48px); }
+      .name-degree { font-size: 17px; }
       .eyebrow { font-size: 11px; }
       .role { font-size: 18px; margin-top: 18px; }
       .focus { font-size: 16px; }
       .bio { font-size: 16px; }
-      .portrait { justify-self: start; display: flex; align-items: center; gap: 20px; text-align: left; }
+      .portrait { justify-self: start; text-align: left; }
+      .portrait-body { display: flex; align-items: center; gap: 20px; }
       .avatar { width: 108px; height: 108px; margin: 0; border-width: 4px; }
       .location { margin-top: 0; }
       .social-links { margin-left: 0; }
@@ -214,11 +216,9 @@
   <section class="hero" id="about" aria-labelledby="page-title">
     <div class="hero-text">
       <p class="eyebrow">AI Engineer &amp; Researcher</p>
-      <h1 id="page-title">Zihan Zhang</h1>
+      <h1 id="page-title">Zihan Zhang<span class="name-degree">, PhD</span></h1>
       <p class="role">Advisory AI Engineer at Lenovo</p>
       <p class="focus">Edge AI &amp; Distributed Machine Learning Researcher</p>
-      <p class="credentials"><strong>PhD</strong> · University of St Andrews</p>
-      <span class="visa-tag"><svg aria-hidden="true" focusable="false"><use href="#icon-badge"></use></svg>UK Global Talent Visa Holder</span>
       <p class="bio">I work on edge–cloud AI infrastructure at Lenovo AI Technology Centre in Edinburgh. My research focuses on resource-efficient distributed machine learning, including federated learning and collaborative training on edge devices. I completed my PhD in Computer Science at the University of St Andrews.</p>
       <div class="hero-actions">
         <a class="button" href="#research">Explore my research <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
@@ -226,16 +226,21 @@
       </div>
     </div>
     <figure class="portrait">
-      <img class="avatar" src="Zihan_avatar.jpeg" alt="Portrait of Zihan Zhang" width="224" height="224" fetchpriority="high" decoding="async">
-      <figcaption>
-        <a class="location" href="https://www.google.com/maps/place/Edinburgh" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#icon-pin"></use></svg>Edinburgh, UK</a>
-        <div class="social-links" aria-label="Professional profiles">
-          <a href="https://scholar.google.com/citations?user=2LlGzyUAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg aria-hidden="true" focusable="false"><use href="#icon-scholar"></use></svg></a>
-          <a href="https://github.com/dreamlh" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg></a>
-          <a href="https://www.linkedin.com/in/zanezihanzhang/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg></a>
-          <a href="https://www.researchgate.net/profile/Zihan-Zhang-71" target="_blank" rel="noopener" aria-label="ResearchGate" title="ResearchGate"><svg aria-hidden="true" focusable="false"><use href="#icon-researchgate"></use></svg></a>
-          <a href="https://orcid.org/0000-0002-3129-3550" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><svg aria-hidden="true" focusable="false"><use href="#icon-orcid"></use></svg></a>
+      <div class="portrait-body">
+        <img class="avatar" src="Zihan_avatar.jpeg" alt="Portrait of Zihan Zhang" width="224" height="224" fetchpriority="high" decoding="async">
+        <div class="portrait-links">
+          <a class="location" href="https://www.google.com/maps/place/Edinburgh" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#icon-pin"></use></svg>Edinburgh, UK</a>
+          <div class="social-links" aria-label="Professional profiles">
+            <a href="https://scholar.google.com/citations?user=2LlGzyUAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg aria-hidden="true" focusable="false"><use href="#icon-scholar"></use></svg></a>
+            <a href="https://github.com/dreamlh" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg></a>
+            <a href="https://www.linkedin.com/in/zanezihanzhang/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg></a>
+            <a href="https://www.researchgate.net/profile/Zihan-Zhang-71" target="_blank" rel="noopener" aria-label="ResearchGate" title="ResearchGate"><svg aria-hidden="true" focusable="false"><use href="#icon-researchgate"></use></svg></a>
+            <a href="https://orcid.org/0000-0002-3129-3550" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><svg aria-hidden="true" focusable="false"><use href="#icon-orcid"></use></svg></a>
+          </div>
         </div>
+      </div>
+      <figcaption>
+        <span class="visa-tag"><svg aria-hidden="true" focusable="false"><use href="#icon-badge"></use></svg>UK Global Talent Visa Holder</span>
       </figcaption>
     </figure>
   </section>
