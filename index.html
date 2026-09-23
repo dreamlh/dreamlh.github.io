@@ -1,501 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zihan Zhang - Edge AI PhD Researcher</title>
-  <meta name="description" content="Zihan Zhang — Edge AI researcher and Advisory AI Engineer at Lenovo, PhD from University of St Andrews. Specialising in AI infrastructure, distributed systems, and federated learning.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f7f4">
+  <title>Zihan Zhang | AI Engineer &amp; Edge AI Researcher</title>
+  <meta name="description" content="Zihan Zhang is an Advisory AI Engineer at Lenovo in Edinburgh, working on edge–cloud AI infrastructure and resource-efficient distributed machine learning. PhD, University of St Andrews.">
+  <link rel="canonical" href="https://zihan-zhang.net/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zihan Zhang | AI Engineer &amp; Edge AI Researcher">
+  <meta property="og:description" content="Edge AI, distributed machine learning, and research into resource-efficient collaborative training. Advisory AI Engineer at Lenovo, Edinburgh.">
+  <meta property="og:url" content="https://zihan-zhang.net/">
+  <meta property="og:image" content="https://zihan-zhang.net/Zihan_avatar.jpeg">
+  <meta property="og:image:alt" content="Portrait of Zihan Zhang">
+  <meta name="twitter:card" content="summary">
+  <script>document.documentElement.classList.add('js');</script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --accent: #2c5f8a;
-      --accent-light: #e8f1f8;
-      --text: #1a1a1a;
-      --muted: #555;
-      --border: #d4d8dd;
-      --bg: #fafafa;
-      --card: #ffffff;
-      --max-w: 900px;
+      color-scheme: light;
+      --bg: #f8f7f4;
+      --surface: #fff;
+      --text: #242b33;
+      --muted: #59636e;
+      --accent: #245b82;
+      --accent-dark: #194462;
+      --tint: #eaf0f4;
+      --border: #d8dcdE;
+      --max-w: 1080px;
     }
-
+    *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: "Georgia", "Times New Roman", serif;
-      font-size: 16px;
-      line-height: 1.75;
-      color: var(--text);
-      background: var(--bg);
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, p, ul { margin: 0; }
+    a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+    a:hover { color: var(--accent-dark); }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 3px; }
+    button { font: inherit; }
+    svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
+    .icon-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+    .skip-link { position: fixed; top: 12px; left: 12px; z-index: 200; padding: 10px 18px; background: var(--text); color: #fff; transform: translateY(-160%); }
+    .skip-link:focus { transform: translateY(0); color: #fff; }
+    .page, .nav-inner, .footer-inner { width: min(var(--max-w), calc(100% - 64px)); margin-inline: auto; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); }
+    .nav-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; min-height: 44px; font-family: Georgia, "Times New Roman", serif; font-size: 23px; font-weight: 700; color: var(--text); text-decoration: none; white-space: nowrap; }
+    .brand::after { content: "."; color: var(--accent); }
+    .nav-links { display: flex; list-style: none; padding: 0; gap: 22px; }
+    .nav-links a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; font-size: 14px; font-weight: 500; text-decoration: none; color: var(--muted); }
+    .nav-links a:hover, .nav-links a[aria-current="location"] { color: var(--accent); text-decoration: underline; text-underline-offset: 7px; }
+    .nav-toggle { display: none; min-height: 44px; min-width: 44px; padding: 8px; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: var(--text); align-items: center; justify-content: center; gap: 8px; cursor: pointer; }
+    section { scroll-margin-top: 100px; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 72px; align-items: center; padding-block: 76px 70px; }
+    .eyebrow, .section-number { font-size: 12px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+    h1 { margin-top: 10px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(48px, 5.5vw, 72px); font-weight: 400; line-height: 1.1; letter-spacing: -.045em; }
+    .role { margin-top: 22px; font-size: 20px; font-weight: 600; line-height: 1.4; }
+    .focus { margin-top: 4px; color: var(--accent); font-size: 18px; }
+    .visa-tag { display: inline-flex; align-items: center; gap: 7px; margin-top: 16px; padding: 5px 10px; border: 1px solid var(--border); border-radius: 5px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .visa-tag svg { width: 15px; height: 15px; }
+    .bio { max-width: 65ch; margin-top: 23px; color: var(--muted); font-size: 17px; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 28px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; padding: 10px 18px; border: 1px solid var(--accent); border-radius: 6px; color: #fff; background: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s; }
+    .button:hover { color: #fff; background: var(--accent-dark); }
+    .button.secondary { color: var(--text); background: transparent; border-color: var(--border); }
+    .button.secondary:hover { background: var(--tint); }
+    .portrait { margin: 0; text-align: center; }
+    .avatar { display: block; width: 224px; height: 224px; margin: 0 auto; border-radius: 50%; object-fit: cover; border: 7px solid var(--surface); outline: 1px solid var(--border); }
+    .location { display: inline-flex; align-items: center; gap: 5px; min-height: 44px; margin-top: 15px; color: var(--muted); font-size: 13px; text-decoration: none; }
+    .location svg { width: 16px; height: 16px; }
+    .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 5px; }
+    .social-links a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 1px solid var(--border); border-radius: 50%; color: var(--muted); text-decoration: none; }
+    .social-links a:hover { background: var(--tint); color: var(--accent); border-color: var(--accent); }
+    .social-secondary { margin-top: 8px; display: flex; justify-content: center; flex-wrap: wrap; gap: 0 13px; }
+    .social-secondary a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; font-size: 12px; color: var(--muted); }
+    .section { padding-block: 58px; border-top: 1px solid var(--border); }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 28px; }
+    h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(28px, 3vw, 34px); font-weight: 400; line-height: 1.25; letter-spacing: -.025em; }
+    .section-number { display: block; margin-bottom: 9px; }
+    .section-intro { max-width: 70ch; margin-bottom: 22px; color: var(--muted); }
+    .section-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; text-decoration: none; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .tag { display: inline-block; border-radius: 4px; padding: 4px 10px; background: var(--tint); color: var(--accent-dark); font-size: 12px; }
+    .work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .work-card { display: flex; flex-direction: column; padding: 26px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+    .work-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 24px; color: var(--muted); font-size: 12px; }
+    .work-meta span:first-child { color: var(--accent); font-weight: 650; }
+    .work-card h3 { font-size: 23px; font-weight: 600; line-height: 1.3; letter-spacing: -.025em; }
+    .work-card p { margin-top: 12px; font-size: 15px; color: var(--muted); }
+    .work-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: auto; padding-top: 22px; }
+    .work-links a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 13px; font-weight: 600; text-decoration: none; }
+    .work-links svg { width: 16px; height: 16px; }
+    .exp-list, .edu-list, .award-list, .pub-list { display: grid; gap: 0; }
+    .exp, .edu { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 28px; padding-block: 27px; }
+    .exp:first-child, .edu:first-child, .pub:first-child, .award:first-child { padding-top: 0; }
+    .exp:last-child, .edu:last-child, .pub:last-child, .award:last-child { padding-bottom: 0; }
+    .exp + .exp, .edu + .edu, .pub + .pub, .award + .award { border-top: 1px solid var(--border); }
+    .exp-period, .edu-period { padding-top: 3px; font-size: 13px; color: var(--muted); }
+    .exp-title, .edu-degree { font-size: 18px; line-height: 1.5; font-weight: 600; }
+    .exp-org, .edu-school { margin-top: 3px; font-size: 15px; color: var(--accent); }
+    .exp-org a, .edu-school a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
+    .exp-org a:hover, .edu-school a:hover { text-decoration: underline; }
+    .exp-desc { margin-top: 8px; font-size: 15px; color: var(--muted); }
+    .exp-desc ul { padding-left: 19px; margin-top: 9px; }
+    .exp-desc li + li { margin-top: 8px; }
+    .exp-desc li::marker { color: var(--accent); }
+    .edu-note { margin-top: 5px; font-size: 14px; color: var(--muted); }
+    .pub { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 24px; padding-block: 24px; }
+    .pub-year, .award-year { font-size: 13px; font-weight: 600; color: var(--accent); padding-top: 3px; }
+    .pub-title { font-size: 17px; font-weight: 600; line-height: 1.5; }
+    .pub-authors { margin-top: 7px; font-size: 14px; color: var(--muted); }
+    .pub-authors strong { font-weight: 600; color: var(--text); }
+    .pub-venue { margin-top: 4px; font-size: 14px; color: var(--muted); }
+    .pub-venue em { font-style: normal; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 11px; }
+    .pub-links a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; padding: 5px 12px; border: 1px solid var(--border); border-radius: 5px; font-size: 12px; font-weight: 600; text-decoration: none; background: transparent; }
+    .pub-links a:hover { border-color: var(--accent); background: var(--tint); }
+    .award { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 24px; padding-block: 18px; }
+    .award-name { font-size: 16px; line-height: 1.5; }
+    .award-org { margin-top: 4px; font-size: 14px; color: var(--muted); }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 40px; }
+    .skill-group h3, .activity-group h3 { margin-bottom: 9px; font-size: 15px; font-weight: 600; }
+    .skill-group p { font-size: 15px; color: var(--muted); }
+    .activities-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; }
+    .activity-group ul { padding-left: 18px; font-size: 14px; color: var(--muted); }
+    .activity-group li + li { margin-top: 8px; }
+    .activity-group li::marker { color: var(--accent); }
+    .activity-date { color: var(--accent); font-weight: 600; }
+    .activity-link { display: inline-flex; align-items: center; min-height: 44px; }
+    .contact-section { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 28px; padding-block: 52px; }
+    .contact-section p { max-width: 60ch; margin-top: 14px; color: var(--muted); font-size: 16px; }
+    .contact-section .button { white-space: nowrap; }
+    footer { border-top: 1px solid var(--border); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding-block: 24px; color: var(--muted); font-size: 12px; }
+    .footer-inner a { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; }
+    @media (max-width: 1000px) {
+      .hero { grid-template-columns: minmax(0, 1fr) 200px; gap: 40px; }
+      .avatar { width: 184px; height: 184px; }
+      .nav-links { gap: 14px; }
+      .work-card { padding: 22px; }
     }
-
-    /* ── Navigation ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
+    @media (max-width: 800px) {
+      .nav-inner { position: relative; flex-wrap: wrap; gap: 0; min-height: 68px; }
+      .js .nav-toggle { display: inline-flex; }
+      .nav-links { flex-basis: 100%; flex-wrap: wrap; gap: 0 18px; padding-block: 0 14px; }
+      .js .nav-links { display: none; }
+      .js .nav-links.open { display: flex; flex-direction: column; align-items: stretch; }
+      .nav-links a { min-height: 48px; justify-content: flex-start; }
+      .hero { gap: 28px; padding-block: 52px; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-card { padding: 24px; }
+      .work-meta { margin-bottom: 12px; }
+      .work-links { padding-top: 12px; }
+      .exp, .edu { grid-template-columns: 140px minmax(0, 1fr); gap: 24px; }
+      .contact-section { grid-template-columns: 1fr; justify-items: start; }
     }
-    nav .inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 52px;
+    @media (max-width: 600px) {
+      .page, .nav-inner, .footer-inner { width: calc(100% - 40px); }
+      .hero { grid-template-columns: 1fr; gap: 36px; padding-block: 38px 44px; }
+      .eyebrow { font-size: 11px; }
+      .role { font-size: 18px; margin-top: 18px; }
+      .focus { font-size: 16px; }
+      .bio { font-size: 16px; }
+      .portrait { justify-self: start; display: flex; align-items: center; gap: 20px; text-align: left; }
+      .avatar { width: 108px; height: 108px; margin: 0; border-width: 4px; }
+      .location { margin-top: 0; }
+      .social-secondary { gap: 0 8px; margin-top: 0; }
+      .social-links, .social-secondary { justify-content: flex-start; }
+      .section { padding-block: 40px; }
+      .section-heading { margin-bottom: 24px; }
+      .section-intro { font-size: 16px; }
+      .exp, .edu, .pub, .award { grid-template-columns: 1fr; gap: 8px; }
+      .exp-period, .edu-period { color: var(--accent); }
+      .skills-grid, .activities-list { grid-template-columns: 1fr; gap: 25px; }
+      .contact-section { padding-block: 40px; }
+      .footer-inner { display: block; }
+      .footer-inner p + p { margin-top: 4px; }
     }
-    nav .brand {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
-    nav a {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: var(--accent); }
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px 6px;
-      color: var(--muted);
-      font-size: 1.25rem;
-      line-height: 1;
-      transition: color 0.2s;
-    }
-    .nav-toggle:hover { color: var(--accent); }
-
-    @media (max-width: 760px) {
-      .nav-toggle { display: block; }
-      nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        position: absolute;
-        top: 52px;
-        left: 0;
-        right: 0;
-        background: var(--card);
-        border-bottom: 1px solid var(--border);
-        padding: 0.5rem 2rem 1rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      }
-      nav ul.open { display: flex; }
-      nav ul li a {
-        display: block;
-        padding: 0.45rem 0;
-        border-bottom: 1px solid var(--border);
-        font-size: 0.8rem;
-      }
-      nav ul li:last-child a { border-bottom: none; }
-    }
-
-    /* ── Layout ── */
-    .page { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem 4rem; }
-
-    /* ── Hero ── */
-    #about {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 2.5rem;
-      align-items: start;
-      padding: 3.5rem 0 3rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .avatar-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    .avatar {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent);
-      display: block;
-    }
-    .social-icons {
-      display: grid;
-      grid-template-columns: repeat(3, 34px);
-      gap: 0.5rem;
-      justify-content: center;
-      margin-top: 0.75rem;
-    }
-    .social-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-    .social-icons a i { font-size: 0.95rem; line-height: 1; }
-    .social-icons a:hover { background: var(--accent); color: #fff; }
-    .location {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.8rem;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.3rem;
-      margin-top: 0.3rem;
-    }
-
-    .hero-text h1 {
-      font-size: 2rem;
-      font-weight: normal;
-      letter-spacing: -0.01em;
-      color: var(--text);
-    }
-    .hero-text .subtitle {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.9rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin-top: 0.3rem;
-    }
-    .hero-text .affil {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.2rem;
-    }
-    .hero-text .bio {
-      margin-top: 1.2rem;
-      font-size: 0.97rem;
-      color: #333;
-    }
-
-    /* ── Section ── */
-    section { padding: 2.5rem 0 0; }
-    section + section { border-top: 1px solid var(--border); margin-top: 2.5rem; }
-
-    h2 {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-    }
-
-    /* ── Research interests ── */
-    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.78rem;
-      background: var(--accent-light);
-      color: var(--accent);
-      border: 1px solid #b8d0e6;
-      border-radius: 3px;
-      padding: 3px 10px;
-    }
-
-    /* ── Publication entry ── */
-    .pub-list { display: flex; flex-direction: column; gap: 1.4rem; }
-    .pub {
-      display: grid;
-      grid-template-columns: 2.2rem 1fr;
-      gap: 0 0.8rem;
-    }
-    .pub-year {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.78rem;
-      color: var(--muted);
-      padding-top: 0.18rem;
-      font-weight: 600;
-    }
-    .pub-title {
-      font-weight: bold;
-      font-size: 0.95rem;
-    }
-    .pub-authors {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-    .pub-venue {
-      font-size: 0.88rem;
-      font-style: italic;
-      color: #444;
-    }
-    .pub-links {
-      margin-top: 0.2rem;
-      display: flex;
-      gap: 0.7rem;
-    }
-    .pub-links a {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.73rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-    }
-    .pub-links a:hover { border-color: var(--accent); }
-
-    /* ── Experience ── */
-    .exp-list { display: flex; flex-direction: column; gap: 1.6rem; }
-    .exp {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 0 1.2rem;
-    }
-    .exp-period {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.78rem;
-      color: var(--muted);
-      padding-top: 0.2rem;
-    }
-    .exp-title {
-      font-weight: bold;
-      font-size: 0.95rem;
-    }
-    .exp-org {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.88rem;
-      color: var(--accent);
-    }
-    .exp-org a, .edu-school a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-    .exp-org a:hover, .edu-school a:hover { border-color: var(--accent); }
-    .exp-desc {
-      font-size: 0.88rem;
-      color: #444;
-      margin-top: 0.35rem;
-    }
-    .exp-desc p { margin-bottom: 0.2rem; }
-    .exp-desc ul { padding-left: 1.2rem; margin-top: 0.25rem; }
-    .exp-desc li { margin-bottom: 0.2rem; }
-
-    /* ── Education ── */
-    .edu-list { display: flex; flex-direction: column; gap: 1.2rem; }
-    .edu {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 0 1.2rem;
-    }
-    .edu-period {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.78rem;
-      color: var(--muted);
-      padding-top: 0.18rem;
-    }
-    .edu-degree { font-weight: bold; font-size: 0.95rem; }
-    .edu-school { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.88rem; color: var(--accent); }
-    .edu-note { font-size: 0.85rem; color: #555; }
-
-    /* ── Awards ── */
-    .award-list { display: flex; flex-direction: column; gap: 0.9rem; }
-    .award {
-      display: grid;
-      grid-template-columns: 50px 1fr;
-      gap: 0 0.8rem;
-      align-items: start;
-    }
-    .award-year {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--muted);
-      padding-top: 0.12rem;
-    }
-    .award-name { font-size: 0.92rem; }
-    .award-org { font-size: 0.85rem; color: var(--muted); }
-
-    /* ── Activities ── */
-    .activities-list { display: flex; flex-direction: column; gap: 1.4rem; }
-    .activity-group h3 {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-    .activity-group ul {
-      list-style: none;
-      padding-left: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .activity-group li {
-      font-size: 0.9rem;
-      color: #333;
-      padding-left: 0.9rem;
-      position: relative;
-      line-height: 1.55;
-    }
-    .activity-group li::before {
-      content: "•";
-      color: var(--accent);
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-    .activity-date {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--accent);
-    }
-    .activity-link {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-    .activity-link:hover { border-color: var(--accent); }
-
-    /* ── Skills ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.2rem;
-    }
-    .skill-group h3 {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-    .skill-group p { font-size: 0.88rem; color: #333; }
-
-    /* ── Footer ── */
-    footer {
-      border-top: 1px solid var(--border);
-      margin-top: 3rem;
-      padding: 1.5rem 2rem;
-      text-align: center;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 0.75rem;
-      color: #aaa;
-      max-width: var(--max-w);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ── Scroll offset for sticky nav ── */
-    section, #about { scroll-margin-top: 64px; }
-
-    /* ── Responsive ── */
-    @media (max-width: 620px) {
-      #about { grid-template-columns: 1fr; justify-items: center; }
-      .hero-text { text-align: center; }
-      .social-icons { justify-content: center; }
-      .exp, .edu, .award { grid-template-columns: 1fr; }
-      .exp-period, .edu-period, .award-year { color: var(--accent); font-size: 0.75rem; }
-      .pub { grid-template-columns: 1fr; }
-      .pub-year { display: inline; margin-right: 0.4rem; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="inner">
+<svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-external" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m3 6 9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="icon-badge" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="11" r="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5 16c0-3 6-3 6 0m3-6h4m-4 4h4" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="icon-scholar" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-5v7h2V9L12 3Zm-7 10v5c4 4 10 4 14 0v-5l-7 4-7-4Z" fill="currentColor"/></symbol>
+  <symbol id="icon-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.84c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.58 4.94.36.31.68.92.68 1.85v2.74c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/></symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3.5 9h3v12h-3V9Zm5 0h3v1.6c.7-1.2 1.8-1.9 3.3-1.9 3.3 0 4.2 2.1 4.2 5V21h-3v-6.5c0-1.6-.3-2.8-2-2.8-1.9 0-2.5 1.5-2.5 3V21h-3V9Z"/></symbol>
+</svg>
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
     <a class="brand" href="#about">Zihan Zhang</a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
-    <ul>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false"><svg aria-hidden="true" focusable="false"><use href="#icon-menu"></use></svg><span>Menu</span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
       <li><a href="#publications">Publications</a></li>
-      <li><a href="#patents">Patents</a></li>
-      <li><a href="#awards">Awards</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#activities">Activities</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
-
-<div class="page">
-
-  <!-- ══ Hero / About ══ -->
-  <div id="about">
-    <div class="avatar-wrap">
-      <img class="avatar" src="Zihan_avatar.jpeg" alt="Zihan Zhang">
-      <div class="social-icons">
-        <a href="https://scholar.google.com/citations?user=2LlGzyUAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg></a>
-        <a href="https://github.com/dreamlh" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/zanezihanzhang/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:ZihanZhang1994@outlook.com" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.researchgate.net/profile/Zihan-Zhang-71" target="_blank" rel="noopener" aria-label="ResearchGate" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-        <a href="https://orcid.org/0000-0002-3129-3550" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><i class="fab fa-orcid"></i></a>
-      </div>
-      <span class="location"><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/place/Edinburgh" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Edinburgh, UK</a></span>
-    </div>
+<main class="page" id="main" tabindex="-1">
+  <section class="hero" id="about" aria-labelledby="page-title">
     <div class="hero-text">
-      <h1>Zihan Zhang</h1>
-      <div class="subtitle">Edge AI PhD Researcher &amp; UK Global Talent Visa Holder</div>
-      <div class="affil">Lenovo &nbsp;·&nbsp; University of St Andrews &nbsp;·&nbsp; Distributed/Edge ML Systems</div>
-      <p class="bio">
-        I am an Edge AI researcher bridging academia and industry. As an advisory AI engineer at Lenovo, I am building an edge-cloud collaborative AI infrastructure. During my PhD at the University of St Andrews, I specialised in resource-efficient distributed ML on edge devices. I collaborated with Rakuten Mobile to produce multiple US patents and peer-reviewed publications. In parallel, as the co-founder for LockEyeGaze, our team secured £92k from Innovate UK CyberASAP and built a real-time gaze-based authentication PoC against GenAI spoofing. Previously at Huawei Noah's Ark Lab, I delivered an ML-driven logistics optimiser achieving multi-million USD/year savings.
-      </p>
+      <p class="eyebrow">AI Engineer &amp; Researcher</p>
+      <h1 id="page-title">Zihan Zhang</h1>
+      <p class="role">Advisory AI Engineer at Lenovo</p>
+      <p class="focus">Edge AI &amp; Distributed Machine Learning</p>
+      <span class="visa-tag"><svg aria-hidden="true" focusable="false"><use href="#icon-badge"></use></svg>UK Global Talent Visa Holder</span>
+      <p class="bio">I work on edge–cloud AI infrastructure at Lenovo AI Technology Centre in Edinburgh. My research focuses on resource-efficient distributed machine learning, including federated learning and collaborative training on edge devices. I completed my PhD in Computer Science at the University of St Andrews.</p>
+      <div class="hero-actions">
+        <a class="button" href="#research">Explore my research <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+        <a class="button secondary" href="mailto:ZihanZhang1994@outlook.com"><svg aria-hidden="true" focusable="false"><use href="#icon-mail"></use></svg>Get in touch</a>
+      </div>
     </div>
-  </div>
-
-  <!-- ══ Research Interests ══ -->
-  <section id="research">
-    <h2>Research Interests</h2>
-    <div class="tags">
-      <span class="tag">AI Infrastructure</span>
-      <span class="tag">Large Language Models</span>
-      <span class="tag">Distributed Systems</span>
-      <span class="tag">Edge Computing</span>
-      <span class="tag">Federated Learning</span>
+    <figure class="portrait">
+      <img class="avatar" src="Zihan_avatar.jpeg" alt="Portrait of Zihan Zhang" width="224" height="224" fetchpriority="high" decoding="async">
+      <figcaption>
+        <a class="location" href="https://www.google.com/maps/place/Edinburgh" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#icon-pin"></use></svg>Edinburgh, UK</a>
+        <div class="social-links" aria-label="Professional profiles">
+          <a href="https://scholar.google.com/citations?user=2LlGzyUAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg aria-hidden="true" focusable="false"><use href="#icon-scholar"></use></svg></a>
+          <a href="https://github.com/dreamlh" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg></a>
+          <a href="https://www.linkedin.com/in/zanezihanzhang/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg></a>
+        </div>
+        <div class="social-secondary">
+          <a href="https://www.researchgate.net/profile/Zihan-Zhang-71" target="_blank" rel="noopener">ResearchGate</a>
+          <a href="https://orcid.org/0000-0002-3129-3550" target="_blank" rel="noopener">ORCID</a>
+        </div>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="section" id="research" aria-labelledby="research-title">
+    <div class="section-heading">
+      <div><span class="section-number">01 / Research</span><h2 id="research-title">Efficient AI, across devices.</h2></div>
+      <a class="section-link" href="#publications">All publications <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+    </div>
+    <p class="section-intro">I study how devices can train models together, with a focus on communication efficiency, resource utilisation, and parallel computation.</p>
+    <div class="tags" aria-label="Research interests">
+      <span class="tag">AI Infrastructure</span><span class="tag">Large Language Models</span><span class="tag">Distributed Systems</span><span class="tag">Edge Computing</span><span class="tag">Federated Learning</span>
+    </div>
+    <div class="work-grid">
+      <article class="work-card" aria-labelledby="work-ampere">
+        <div class="work-meta"><span>TPDS</span><span>2026</span></div>
+        <h3 id="work-ampere">Ampere</h3><p>Communication-efficient split federated learning, with a focus on model accuracy.</p>
+        <div class="work-links"><a href="https://doi.org/10.1109/TPDS.2026.3729156" aria-label="Read the Ampere paper">Paper <svg aria-hidden="true" focusable="false"><use href="#icon-external"></use></svg></a><a href="https://github.com/blessonvar/Ampere" aria-label="View Ampere code">Code <svg aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg></a></div>
+      </article>
+      <article class="work-card" aria-labelledby="work-fedoptima">
+        <div class="work-meta"><span>FGCS</span><span>2026</span></div>
+        <h3 id="work-fedoptima">FedOptima</h3><p>Optimising resource utilisation in federated learning across distributed devices.</p>
+        <div class="work-links"><a href="https://doi.org/10.1016/j.future.2026.108551" aria-label="Read the FedOptima paper">Paper <svg aria-hidden="true" focusable="false"><use href="#icon-external"></use></svg></a><a href="https://github.com/blessonvar/FedOptima" aria-label="View FedOptima code">Code <svg aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg></a></div>
+      </article>
+      <article class="work-card" aria-labelledby="work-pipar">
+        <div class="work-meta"><span>JPDC</span><span>2024</span></div>
+        <h3 id="work-pipar">PiPar</h3><p>Pipeline parallelism for collaborative machine learning on edge devices.</p>
+        <div class="work-links"><a href="https://doi.org/10.1016/j.jpdc.2024.104947" aria-label="Read the PiPar paper">Paper <svg aria-hidden="true" focusable="false"><use href="#icon-external"></use></svg></a><a href="https://github.com/blessonvar/PipeLearn" aria-label="View PiPar code">Code <svg aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg></a></div>
+      </article>
     </div>
   </section>
-
-    <!-- ══ Experience ══ -->
-  <section id="experience">
-    <h2>Experience</h2>
+  <section class="section" id="experience" aria-labelledby="experience-title">
+    <div class="section-heading"><div><span class="section-number">02 / Experience</span><h2 id="experience-title">From research to real-world systems.</h2></div></div>
     <div class="exp-list">
       <div class="exp">
-        <div class="exp-period">Feb 2026 - present</div>
+        <div class="exp-period">Feb 2026 – present</div>
         <div>
-          <div class="exp-title">Advisory AI Engineer</div>
+          <h3 class="exp-title">Advisory AI Engineer</h3>
           <div class="exp-org"><a href="https://www.lenovo.com/" target="_blank" rel="noopener">Lenovo</a></div>
           <div class="exp-desc">
-            <p>Building a hybrid AI vision at Lenovo AI Technology Centre (LATC).</p>
+            <p>Building edge–cloud AI infrastructure at Lenovo AI Technology Centre (LATC), Edinburgh.</p>
           </div>
         </div>
       </div>
@@ -503,15 +283,14 @@
       <div class="exp">
         <div class="exp-period">Oct 2021 – Jan 2026</div>
         <div>
-          <div class="exp-title">PhD Researcher</div>
+          <h3 class="exp-title">PhD Researcher</h3>
           <div class="exp-org"><a href="https://edgehub.co.uk/" target="_blank" rel="noopener">University of St Andrews</a></div>
           <div class="exp-desc">
-            <p>My research focused on high-efficiency and privacy-preserving distributed machine learning on edge devices.</p>
+            <p>Researched resource-efficient, privacy-preserving distributed machine learning on edge devices.</p>
             <ul>
               <li>Built a distributed ML system for training language models and CNNs across 100+ edge devices; reduced end-to-end training time and improved model accuracy.</li>
-              <li>Reconstructed training pipeline, overlapping computation with communication; reduce device–server communication and on-device computation.</li>
-              <li>Engineered pipeline parallelism and async aggregation to minimise idle time on heterogeneous devices; stabilised throughput under stragglers and intermittent connectivity.</li>
-              <li>Industry collaboration with Rakuten Mobile Japan: multiple US patents and top-tier publications.</li>
+              <li>Overlapped computation and communication using pipeline parallelism and asynchronous aggregation, reducing communication, on-device computation, and idle time; stabilised throughput under stragglers and intermittent connectivity.</li>
+              <li>Collaborated with Rakuten Mobile Japan on US patent applications and peer-reviewed publications.</li>
             </ul>
           </div>
         </div>
@@ -520,15 +299,14 @@
       <div class="exp">
         <div class="exp-period">Mar 2024 – Dec 2025</div>
         <div>
-          <div class="exp-title">Co-Founder, Edge AI Expert</div>
+          <h3 class="exp-title">Co-Founder, Edge AI Expert</h3>
           <div class="exp-org">LockEyeGaze (Part-Time)</div>
           <div class="exp-desc">
-            <p>I was dedicated to designing and developing eye-tracking-based authentication on edge devices that is highly accurate and requires no additional equipment.</p>
+            <p>Co-founded a project exploring gaze-based authentication on everyday devices, without additional equipment.</p>
             <ul>
-              <li>Addressed GenAI-era vulnerabilities in face/voice biometrics by shifting to gaze signals; co-authored the winning CyberASAP bid and secured £92k to deliver a PoC and roadmap.</li>
-              <li>Architected an eye-tracking authentication system end to end (capture → calibration → estimation → embedding → matching) with challenge–response and basic liveness checks.</li>
-              <li>Collected 100+ participant sessions on phone and laptop.</li>
-              <li>Developed and delivered a PoC at CyberASAP Demo Day.</li>
+              <li>Co-authored the successful CyberASAP bid; our team secured £92k to develop a gaze-based authentication PoC and roadmap addressing GenAI spoofing threats.</li>
+              <li>Built the authentication pipeline from capture and calibration through gaze estimation, embedding, and matching, with challenge–response and basic liveness checks.</li>
+              <li>Collected 100+ participant sessions on phones and laptops and presented the PoC at CyberASAP Demo Day.</li>
             </ul>
           </div>
         </div>
@@ -537,14 +315,14 @@
       <div class="exp">
         <div class="exp-period">Dec 2018 – Jul 2021</div>
         <div>
-          <div class="exp-title">Research Engineer</div>
+          <h3 class="exp-title">Research Engineer</h3>
           <div class="exp-org"><a href="http://dev3.noahlab.com.hk/" target="_blank" rel="noopener">Noah's Ark Lab (AI Lab), Huawei</a></div>
           <div class="exp-desc">
-            <p>As a research/algorithm engineer at Huawei Noah's Ark Lab, I used machine learning to optimise Huawei's supply chain.</p>
+            <p>Applied machine learning to supply-chain optimisation at Huawei Noah's Ark Lab.</p>
             <ul>
-              <li>Delivered a distributed ML-driven optimisation system for logistics (packing + routing); increased average packing rate; reduced annual logistics cost by several million USD in production.</li>
-              <li>Built a configurable constraint framework and a learning-based solver, delivered as a tested algorithm library with API contracts; platform team containerised and deployed it on Huawei Cloud.</li>
-              <li>Co-organised the EMO 2021 competition: shipped a standardised Docker image, automated evaluation tool, and a reproducible baseline; open-sourced the winning solution on GitHub.</li>
+              <li>Delivered a distributed ML-driven packing and routing system that improved average packing rate and reduced annual logistics costs by several million USD in production.</li>
+              <li>Built a configurable constraint framework and learning-based solver as a tested algorithm library with defined APIs; the platform team containerised and deployed it on Huawei Cloud.</li>
+              <li>Co-organised the EMO 2021 competition, providing a Docker image, automated evaluation and reproducible baseline; open-sourced the winning solution on GitHub.</li>
               <li>Mentored an intern and co-authored an ACM CIKM paper on ML for large-scale optimisation.</li>
             </ul>
           </div>
@@ -554,15 +332,121 @@
     </div>
   </section>
 
-  <!-- ══ Education ══ -->
-  <section id="education">
-    <h2>Education</h2>
+  <section class="section" id="publications" aria-labelledby="publications-title">
+    <div class="section-heading"><div><span class="section-number">03 / Publications</span><h2 id="publications-title">Research publications</h2></div></div>
+    <div class="pub-list">
+
+      <div class="pub">
+        <div class="pub-year">2026</div>
+        <div>
+          <h3 class="pub-title">Ampere: Communication-Efficient and High-Accuracy Split Federated Learning</h3>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong, Blesson Varghese</div>
+          <div class="pub-venue"><em>IEEE Transactions on Parallel and Distributed Systems (TPDS)</em>, vol. 37, no. 11, pp. 2359–2376, 2026</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1109/TPDS.2026.3729156">Paper / DOI</a>
+            <a href="https://github.com/blessonvar/Ampere">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2026</div>
+        <div>
+          <h3 class="pub-title">Resource Utilization Optimized Federated Learning</h3>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong, Blesson Varghese</div>
+          <div class="pub-venue"><em>Future Generation Computer Systems (FGCS)</em>, vol. 183, art. no. 108551, 2026</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.future.2026.108551">Paper / DOI</a>
+            <a href="https://github.com/blessonvar/FedOptima">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2025</div>
+        <div>
+          <h3 class="pub-title">Identity Deepfake Threats to Biometric Authentication Systems: Public and Expert Perspectives</h3>
+          <div class="pub-authors">Shijing He, Yaxiong Lei, <strong>Zihan Zhang</strong>, Yuzhou Sun, Shujun Li, Chi Zhang, Juan Ye</div>
+          <div class="pub-venue"><em>arXiv preprint</em> arXiv:2506.06825</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2506.06825">arXiv</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2024</div>
+        <div>
+          <h3 class="pub-title">PiPar: Pipeline Parallelism for Collaborative Machine Learning</h3>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Philip Rodgers, Peter Kilpatrick, Ivor Spence, Blesson Varghese</div>
+          <div class="pub-venue">Journal of Parallel and Distributed Computing, Vol. 193</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.jpdc.2024.104947">Paper / DOI</a>
+            <a href="https://github.com/blessonvar/PipeLearn">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2021</div>
+        <div>
+          <h3 class="pub-title">Learning to Pack: A Data-Driven Tree Search Algorithm for Large-Scale 3D Bin Packing Problem</h3>
+          <div class="pub-authors">Qianwen Zhu, Xihan Li, <strong>Zihan Zhang</strong>, Zhixing Luo, Xialiang Tong, Mingxuan Yuan, Jia Zeng</div>
+          <div class="pub-venue">Proceedings of the 30th ACM International Conference on Information &amp; Knowledge Management (CIKM '21)</div>
+          <div class="pub-links">
+            <a href="https://dl.acm.org/doi/10.1145/3459637.3481933">Paper / DOI</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="patents" aria-labelledby="patents-title">
+    <div class="section-heading"><div><span class="section-number">04 / Intellectual property</span><h2 id="patents-title">Patent applications</h2></div></div>
+    <div class="pub-list">
+
+      <div class="pub">
+        <div class="pub-year">2025</div>
+        <div>
+          <h3 class="pub-title">Federated Learning with Unidirectional Inter-Block Training</h3>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong and Blesson Varghese</div>
+          <div class="pub-venue">US patent application · Filed Mar 2025</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2024</div>
+        <div>
+          <h3 class="pub-title">Collaborative Training with Parallel Operations</h3>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Blesson Varghese, Philip Rodgers, Ivor Spence, and Peter Kilpatrick</div>
+          <div class="pub-venue">US published patent application 20240394555A1 · Published Nov 2024</div>
+          <div class="pub-links">
+            <a href="https://patents.google.com/patent/US20240394555A1/en">Google Patents</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2024</div>
+        <div>
+          <h3 class="pub-title">Federated Learning with Increased Resource Utilization</h3>
+          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong and Blesson Varghese</div>
+          <div class="pub-venue">US patent application · Filed Aug 2024</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="education" aria-labelledby="education-title">
+    <div class="section-heading"><div><span class="section-number">05 / Education</span><h2 id="education-title">Academic background</h2></div></div>
     <div class="edu-list">
 
       <div class="edu">
         <div class="edu-period">Oct 2021 – Jan 2026</div>
         <div>
-          <div class="edu-degree">PhD in Computer Science</div>
+          <h3 class="edu-degree">PhD in Computer Science</h3>
           <div class="edu-school"><a href="https://edgehub.co.uk/" target="_blank" rel="noopener">University of St Andrews</a></div>
           <div class="edu-note">Distributed/Edge ML Systems &nbsp;·&nbsp; Supervisor: Prof. Blesson Varghese</div>
         </div>
@@ -571,7 +455,7 @@
       <div class="edu">
         <div class="edu-period">Sep 2017 – Nov 2018</div>
         <div>
-          <div class="edu-degree">M.Sc. Data Science</div>
+          <h3 class="edu-degree">M.Sc. Data Science</h3>
           <div class="edu-school"><a href="https://www.ed.ac.uk/" target="_blank" rel="noopener">University of Edinburgh</a></div>
           <div class="edu-note">Distinction (78/100)</div>
         </div>
@@ -580,7 +464,7 @@
       <div class="edu">
         <div class="edu-period">Sep 2013 – Jun 2017</div>
         <div>
-          <div class="edu-degree">B.Sc. Mathematics and Applied Mathematics</div>
+          <h3 class="edu-degree">B.Sc. Mathematics and Applied Mathematics</h3>
           <div class="edu-school"><a href="https://www.sdu.edu.cn/" target="_blank" rel="noopener">Shandong University</a></div>
           <div class="edu-note">Upper Second-Class Honours &nbsp;·&nbsp; Hua Luogeng Class</div>
         </div>
@@ -589,124 +473,14 @@
     </div>
   </section>
 
-  <!-- ══ Publications ══ -->
-  <section id="publications">
-    <h2>Publications</h2>
-    <div class="pub-list">
-
-      <div class="pub">
-        <div class="pub-year">2026</div>
-        <div>
-          <div class="pub-title">Ampere: Communication-Efficient and High-Accuracy Split Federated Learning</div>
-          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong, Blesson Varghese</div>
-          <div class="pub-venue"><em>IEEE Transactions on Parallel and Distributed Systems (TPDS)</em>, vol. 37, no. 11, pp. 2359–2376, 2026</div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1109/TPDS.2026.3729156">[DOI]</a>
-            <a href="https://github.com/blessonvar/Ampere">[Code]</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2026</div>
-        <div>
-          <div class="pub-title">Resource Utilization Optimized Federated Learning</div>
-          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong, Blesson Varghese</div>
-          <div class="pub-venue"><em>Future Generation Computer Systems (FGCS)</em>, vol. 183, art. no. 108551, 2026</div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.future.2026.108551">[DOI]</a>
-            <a href="https://github.com/blessonvar/FedOptima">[Code]</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2025</div>
-        <div>
-          <div class="pub-title">Identity Deepfake Threats to Biometric Authentication Systems: Public and Expert Perspectives</div>
-          <div class="pub-authors">Shijing He, Yaxiong Lei, <strong>Zihan Zhang</strong>, Yuzhou Sun, Shujun Li, Chi Zhang, Juan Ye</div>
-          <div class="pub-venue"><em>arXiv preprint</em> arXiv:2506.06825</div>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2506.06825">[arXiv]</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2024</div>
-        <div>
-          <div class="pub-title">PiPar: Pipeline Parallelism for Collaborative Machine Learning</div>
-          <div class="pub-authors"><strong>Zihan Zhang</strong>, Philip Rodgers, Peter Kilpatrick, Ivor Spence, Blesson Varghese</div>
-          <div class="pub-venue">Journal of Parallel and Distributed Computing, Vol. 193</div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.jpdc.2024.104947">[DOI]</a>
-            <a href="https://github.com/blessonvar/PipeLearn">[Code]</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2021</div>
-        <div>
-          <div class="pub-title">Learning to Pack: A Data-Driven Tree Search Algorithm for Large-Scale 3D Bin Packing Problem</div>
-          <div class="pub-authors">Qianwen Zhu, Xihan Li, <strong>Zihan Zhang</strong>, Zhixing Luo, Xialiang Tong, Mingxuan Yuan, Jia Zeng</div>
-          <div class="pub-venue">Proceedings of the 30th ACM International Conference on Information &amp; Knowledge Management (CIKM '21)</div>
-          <div class="pub-links">
-            <a href="https://dl.acm.org/doi/10.1145/3459637.3481933">[DOI]</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══ Patents ══ -->
-  <section id="patents">
-    <h2>Patents</h2>
-    <div class="pub-list">
-
-      <div class="pub">
-        <div class="pub-year">2025</div>
-        <div>
-          <div class="pub-title">Federated Learning with Unidirectional Inter-Block Training</div>
-          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong and Blesson Varghese</div>
-          <div class="pub-venue">US Patent (Filed Mar 2025)</div>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2024</div>
-        <div>
-          <div class="pub-title">Collaborative Training with Parallel Operations</div>
-          <div class="pub-authors"><strong>Zihan Zhang</strong>, Blesson Varghese, Philip Rodgers, Ivor Spence, and Peter Kilpatrick</div>
-          <div class="pub-venue">US Patent 20240394555A1 (Published Nov 2024)</div>
-          <div class="pub-links">
-            <a href="https://patents.google.com/patent/US20240394555A1/en">[Google Patents]</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2024</div>
-        <div>
-          <div class="pub-title">Federated Learning with Increased Resource Utilization</div>
-          <div class="pub-authors"><strong>Zihan Zhang</strong>, Leon Wong and Blesson Varghese</div>
-          <div class="pub-venue">US Patent (Filed Aug 2024)</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══ Awards & Honours ══ -->
-  <section id="awards">
-    <h2>Awards &amp; Honours</h2>
+  <section class="section" id="awards" aria-labelledby="awards-title">
+    <div class="section-heading"><div><span class="section-number">06 / Recognition</span><h2 id="awards-title">Awards &amp; funding</h2></div></div>
     <div class="award-list">
 
       <div class="award">
         <div class="award-year">2025</div>
         <div>
-          <div class="award-name">King's Start-Up Accelerator</div>
+          <h3 class="award-name">King's Start-Up Accelerator</h3>
           <div class="award-org">King's College London &nbsp;·&nbsp; In-kind support — workspace, mentoring, networking</div>
         </div>
       </div>
@@ -714,7 +488,7 @@
       <div class="award">
         <div class="award-year">2024</div>
         <div>
-          <div class="award-name">Cyber Security Academic Startup Accelerator Programme (CyberASAP) Y8</div>
+          <h3 class="award-name">Cyber Security Academic Startup Accelerator Programme (CyberASAP) Y8</h3>
           <div class="award-org">Innovate UK &nbsp;·&nbsp; £92k grant</div>
         </div>
       </div>
@@ -722,7 +496,7 @@
       <div class="award">
         <div class="award-year">2021</div>
         <div>
-          <div class="award-name">PhD Scholarship</div>
+          <h3 class="award-name">PhD Scholarship</h3>
           <div class="award-org">Rakuten Mobile Inc., Japan &nbsp;·&nbsp; Fully funded, ~£150k</div>
         </div>
       </div>
@@ -730,7 +504,7 @@
       <div class="award">
         <div class="award-year">2020</div>
         <div>
-          <div class="award-name">Rising Star Award</div>
+          <h3 class="award-name">Rising Star Award</h3>
           <div class="award-org">Huawei Technologies &nbsp;·&nbsp; Top 10% by performance</div>
         </div>
       </div>
@@ -738,7 +512,7 @@
       <div class="award">
         <div class="award-year">2017</div>
         <div>
-          <div class="award-name">Informatics International Master's Scholarship</div>
+          <h3 class="award-name">Informatics International Master's Scholarship</h3>
           <div class="award-org">University of Edinburgh &nbsp;·&nbsp; ≤10 per cohort</div>
         </div>
       </div>
@@ -746,7 +520,7 @@
       <div class="award">
         <div class="award-year">2016</div>
         <div>
-          <div class="award-name">Hua Luogeng Scholarship</div>
+          <h3 class="award-name">Hua Luogeng Scholarship</h3>
           <div class="award-org">Shandong University &nbsp;·&nbsp; ≤15 per cohort</div>
         </div>
       </div>
@@ -754,9 +528,8 @@
     </div>
   </section>
 
-  <!-- ══ Skills ══ -->
-  <section id="skills">
-    <h2>Technical Skills</h2>
+  <section class="section" id="skills" aria-labelledby="skills-title">
+    <div class="section-heading"><div><span class="section-number">07 / Toolkit</span><h2 id="skills-title">Technical skills</h2></div></div>
     <div class="skills-grid">
       <div class="skill-group">
         <h3>Programming</h3>
@@ -777,9 +550,8 @@
     </div>
   </section>
 
-  <!-- ══ Activities ══ -->
-  <section id="activities">
-    <h2>Activities</h2>
+  <section class="section" id="activities" aria-labelledby="activities-title">
+    <div class="section-heading"><div><span class="section-number">08 / Community</span><h2 id="activities-title">Academic service &amp; activities</h2></div></div>
     <div class="activities-list">
 
       <div class="activity-group">
@@ -826,37 +598,52 @@
     </div>
   </section>
 
-  <!-- ══ Contact ══ -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p style="font-size:0.92rem; color:#444;">
-      I am happy to discuss research collaborations, speaking engagements, or general enquiries. Feel free to <a href="mailto:ZihanZhang1994@outlook.com" style="color:var(--accent);">reach out by email</a>.
-    </p>
+  <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+    <div><span class="section-number">09 / Contact</span><h2 id="contact-title">Let’s connect.</h2>
+      <p>I welcome conversations about research collaborations, speaking engagements, and shared interests in AI systems.</p>
+    </div>
+    <a class="button" href="mailto:ZihanZhang1994@outlook.com"><svg aria-hidden="true" focusable="false"><use href="#icon-mail"></use></svg>Get in touch</a>
   </section>
-
-</div><!-- /page -->
-
+</main>
 <footer>
-  &copy; 2026 Zihan Zhang &nbsp;·&nbsp; Lenovo &nbsp;·&nbsp; University of St Andrews &nbsp;·&nbsp;
-  Last updated: April 2026
+  <div class="footer-inner"><p>&copy; 2026 Zihan Zhang · Edinburgh, UK</p><p>Updated <time datetime="2026-09-23">September 2026</time> · <a href="#about">Back to top ↑</a></p></div>
 </footer>
-
 <script>
   const toggle = document.querySelector('.nav-toggle');
-  const navUl  = document.querySelector('nav ul');
+  const navLinks = document.querySelector('.nav-links');
+  const mobileViewport = window.matchMedia('(max-width: 800px)');
+
+  function closeMenu(restoreFocus = false) {
+    navLinks.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+    if (restoreFocus) toggle.focus();
+  }
 
   toggle.addEventListener('click', () => {
-    const isOpen = navUl.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen);
+    const isOpen = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
   });
 
-  // Close menu when a nav link is clicked
-  navUl.querySelectorAll('a').forEach(link => {
+  navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navUl.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
+      closeMenu();
+      const target = document.querySelector(link.getAttribute('href'));
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
     });
   });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navLinks.classList.contains('open')) closeMenu(true);
+  });
+  document.addEventListener('click', event => {
+    if (!event.target.closest('.site-nav')) closeMenu();
+  });
+  document.querySelector('.site-nav').addEventListener('focusout', event => {
+    if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) closeMenu();
+  });
+  mobileViewport.addEventListener('change', () => closeMenu());
 </script>
 </body>
 </html>
